@@ -100,7 +100,7 @@ FROM base AS ros_base
 COPY devel_scripts/docker/ros_base/ ros_base/
 
 # update to force ROS package reinstall
-ENV PACKAGE_UPDATE_SERIAL=1
+ENV PACKAGE_UPDATE_SERIAL=2
 
 # ROS
 # - Install ROS base packages
