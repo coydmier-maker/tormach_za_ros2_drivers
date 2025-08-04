@@ -134,9 +134,6 @@ class DriveState(RosHalComponent):
                 pos_fb=self.hal_comp.newpin(
                     f"{drv_num}.pos_fb", type_float, dir_in
                 ),
-                vel_fb=self.hal_comp.newpin(
-                    f"{drv_num}.vel_fb", type_float, dir_in
-                ),
                 pos_cmd=self.hal_comp.newpin(
                     f"{drv_num}.pos_cmd", type_float, dir_in
                 ),
@@ -231,10 +228,11 @@ class DriveState(RosHalComponent):
         for drv_num, drv_pins in self.home_pins.items():
             joint_names.append(f"joint_{drv_num + 1}")
             point.positions.append(drv_pins["pos_fb"].get())
-            point.velocities.append(drv_pins["vel_fb"].get())
-            point.effort.append(0.0)
+            point.velocities.append(0.0)
+            point.accelerations.append(0.0)
         # Set load pin and publish trajectory
         self.load.set(True)
+        self.logger.info(f"Publishing zero trajectory:  {point}")
         self.joint_trajectory_publisher.publish(
             JointTrajectory(joint_names=joint_names, points=[point])
         )
@@ -253,10 +251,15 @@ class DriveState(RosHalComponent):
             try:
                 self.check_timeout()
             except StateError:
-                self.load.set(False)
                 self.logger.error("Zero command-feedback error timed out")
+                self.load.set(False)
                 raise
+        self.load.set(False)
         self.logger.info("Successfully zeroed command error")
+        for drv_num, drv_pins in self.home_pins.items():
+            cmd, fb = drv_pins["pos_cmd"].get(), drv_pins["pos_fb"].get()
+            self.logger.info(f" drive {drv_num}:  cmd={cmd}; fb={fb}")
+
 
     def set_state_wait_latch(self):
         # On first call, wait one cycle for device mgr to pick up changes
