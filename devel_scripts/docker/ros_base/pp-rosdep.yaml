@@ -51,13 +51,6 @@ python3-sphinxcontrib-confluencebuilder:
 python3-tzlocal:
   debian: [python3-tzlocal]
   ubuntu: [python3-tzlocal]
-python3-aiodocker:
-  debian:
-    pip:
-      packages: [git+https://github.com/cerna/aiodocker@import_image_quiet]
-  ubuntu:
-    pip:
-      packages: [git+https://github.com/cerna/aiodocker@import_image_quiet]
 python3-dbus-next:
   debian:
     pip:
