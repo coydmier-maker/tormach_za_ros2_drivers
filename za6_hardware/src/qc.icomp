@@ -73,6 +73,9 @@ function _;
 #define SIGN2(a, b) (CLAMP((a) / (b), -1, 1))
 
 FUNCTION(_) {
+  // Just in case, avoid div0 errors and -nan values on pins.  ROB-922
+  if (periodf == 0.0) return (0);
+
   watchdog -= periodf;
   watchdog = MAX(watchdog, 0);
   if(watchdog <= 0.0){
