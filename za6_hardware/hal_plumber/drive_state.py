@@ -77,6 +77,7 @@ class DriveState(RosHalComponent):
         STATE_START: "start",
         STATE_FAULT: "fault",
     }
+    _prev_state_fb = ZAHWDeviceMgr.STATE_INIT
 
     @classmethod
     def state_str(cls, state):
@@ -193,7 +194,25 @@ class DriveState(RosHalComponent):
         )
         self.logger.info("Joint states sub + pub created")
 
+    def check_entered_fault_state(self):
+        # Log state changes and respond to fault state
+        state_fb = self.state_fb.get()
+        if self._prev_state_fb == state_fb:
+            return  # No change
+        self.logger.debug(f"state_fb changed to {state_fb}")
+        self._prev_state_fb = state_fb
+        if state_fb != self.STATE_FAULT:
+            return  # No fault
+        msg = (f"Device mgr entered FAULT state")
+        self.logger.error(msg)
+        raise StateError(msg)
+
+    def init_timeout(self):
+        self.start_time = time.monotonic()
+
     def check_timeout(self):
+        if getattr(self, "start_time", None) is None:
+            raise RuntimeError("check_timeout() called before init_timeout()")
         # If not yet timed out, do nothing
         time_since_start = time.monotonic() - self.start_time
         if time_since_start <= self.timeout:
@@ -201,6 +220,7 @@ class DriveState(RosHalComponent):
 
         # Otherwise, clear state and raise an exception
         self.state_set.set(False)
+        self.start_time = None
         self.svc_state = SvcState.IDLE
         msg = (
             f"'{self.state_cmd_str}' command timeout"
@@ -213,7 +233,7 @@ class DriveState(RosHalComponent):
         # Set command, clear latch
         self.state_cmd.set(state)
         self.state_set.set(False)
-        self.start_time = time.monotonic()
+        self.init_timeout()
         # When starting drives, zero command error to avoid unexpected motion
         if state == self.STATE_START:
             self.zero_error()
@@ -230,35 +250,32 @@ class DriveState(RosHalComponent):
             point.positions.append(drv_pins["pos_fb"].get())
             point.velocities.append(0.0)
             point.accelerations.append(0.0)
-        # Set load pin and publish trajectory
-        self.load.set(True)
-        self.logger.info(f"Publishing zero trajectory:  {point}")
-        self.joint_trajectory_publisher.publish(
-            JointTrajectory(joint_names=joint_names, points=[point])
-        )
-        self.logger.info("Published trajectory to zero command error")
-        # Wait for trajectory execution
-        self.start_time = time.monotonic()
-        all_zeroed = False
-        while not all_zeroed:
-            all_zeroed = True
-            for drv_num, drv_pins in self.home_pins.items():
-                err = drv_pins["pos_cmd"].get() - drv_pins["pos_fb"].get()
-                if abs(err) > self.joint_error_epsilon:
-                    all_zeroed = False
-            if all_zeroed:
-                break
-            try:
+        try:
+            # Set load pin and publish trajectory
+            self.load.set(True)
+            self.logger.info(f"Publishing zero trajectory:  {point}")
+            self.joint_trajectory_publisher.publish(
+                JointTrajectory(joint_names=joint_names, points=[point])
+            )
+            self.logger.info("Published trajectory to zero command error")
+            # Wait for trajectory execution
+            self.init_timeout()
+            all_zeroed = False
+            while not all_zeroed:
+                all_zeroed = True
+                for drv_num, drv_pins in self.home_pins.items():
+                    err = drv_pins["pos_cmd"].get() - drv_pins["pos_fb"].get()
+                    if abs(err) > self.joint_error_epsilon:
+                        all_zeroed = False
+                if all_zeroed:
+                    break
                 self.check_timeout()
-            except StateError:
-                self.logger.error("Zero command-feedback error timed out")
-                self.load.set(False)
-                raise
-        self.load.set(False)
-        self.logger.info("Successfully zeroed command error")
-        for drv_num, drv_pins in self.home_pins.items():
-            cmd, fb = drv_pins["pos_cmd"].get(), drv_pins["pos_fb"].get()
-            self.logger.info(f" drive {drv_num}:  cmd={cmd}; fb={fb}")
+            self.logger.info("Successfully zeroed command error")
+        except StateError as e:
+            self.logger.error("Zero command-feedback error:  {e.msg}")
+            raise
+        finally:
+            self.load.set(False)
 
 
     def set_state_wait_latch(self):
@@ -306,18 +323,18 @@ class DriveState(RosHalComponent):
     def set_state(self, state):
         # Kick off new state command
         self.set_state_start(state)
-        # Loop until complete or timeout
+        # Loop until complete or timeout, or fault
+        self.init_timeout()
         while self.svc_state is not SvcState.COMPLETE:
             cb = self.dispatcher[self.svc_state]
             assert cb, f"No update cb for svc_state {self.svc_state.name}"
             cb()
             self.check_timeout()
+            self.check_entered_fault_state()
             time.sleep(self.update_per)
         # Complete
         cur_state_str = self.state_str(self.state_fb.get())
-        msg = f"New state '{cur_state_str}'"
-        self.logger.info(msg)
-        return msg
+        return f"New state '{cur_state_str}'"
 
     def enable_svc_cb(self, req, rsp):
         self.logger.info(f"/{self.enable_svc_name} service called")
@@ -325,9 +342,10 @@ class DriveState(RosHalComponent):
             rsp.success, rsp.message = True, self.set_state(self.STATE_START)
         except StateError as e:
             rsp.success, rsp.message = False, str(e)
+            self.logger.error(rsp.message)
         except Exception as e:
-            self.logger.error(traceback.format_exc())
             rsp.success, rsp.message = False, f"Exception:  {e} ({str(e)})"
+            self.logger.error(rsp.message)
         self.logger.debug(f"/{self.enable_svc_name} service completed")
         return rsp
 
@@ -338,8 +356,8 @@ class DriveState(RosHalComponent):
         except StateError as e:
             rsp.success, rsp.message = False, str(e)
         except Exception as e:
-            self.logger.error(traceback.format_exc())
             rsp.success, rsp.message = False, f"Exception:  {e} ({str(e)})"
+            self.logger.error(rsp.message)
         self.logger.debug(f"/{self.disable_svc_name} service completed")
         return rsp
 
@@ -349,9 +367,9 @@ class DriveState(RosHalComponent):
             self.zero_error()
             rsp.success, rsp.message = True, "OK"
         except Exception as e:
-            self.logger.error(traceback.format_exc())
             rsp.success, rsp.message = False, f"Exception:  {e} ({str(e)})"
-        self.logger.debug(f"/{self.zero_error_svc_name} service completed")
+            self.logger.error(rsp.message)
+        self.logger.info(f"/{self.zero_error_svc_name} service completed")
         return rsp
 
     #
@@ -402,7 +420,7 @@ class DriveState(RosHalComponent):
         self.logger.info(f"Requesting joint {joint_idx} (drive {drv_idx}) home")
         pins["home_request"].set(True)
         # Wait for success or error, or timeout
-        self.start_time = time.monotonic()
+        self.init_timeout()
         while True:
             if pins["home_success"].get():
                 self.home_cleanup(joint_idx)
