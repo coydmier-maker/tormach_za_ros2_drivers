@@ -203,7 +203,7 @@ class DriveState(RosHalComponent):
         self._prev_state_fb = state_fb
         if state_fb != self.STATE_FAULT:
             return  # No fault
-        msg = (f"Device mgr entered FAULT state")
+        msg = "Device mgr entered FAULT state"
         self.logger.error(msg)
         raise StateError(msg)
 
@@ -272,11 +272,10 @@ class DriveState(RosHalComponent):
                 self.check_timeout()
             self.logger.info("Successfully zeroed command error")
         except StateError as e:
-            self.logger.error("Zero command-feedback error:  {e.msg}")
+            self.logger.error(f"Zero command-feedback error:  {e.msg}")
             raise
         finally:
             self.load.set(False)
-
 
     def set_state_wait_latch(self):
         # On first call, wait one cycle for device mgr to pick up changes
