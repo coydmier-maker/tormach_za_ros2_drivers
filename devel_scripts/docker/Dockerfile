@@ -119,7 +119,7 @@ ENV ROS_VERSION=2
 
 FROM ros_base AS ros_custom_build
 # update whenever we need to update the external packages
-ENV PACKAGE_UPDATE_SERIAL=23
+ENV PACKAGE_UPDATE_SERIAL=24
 COPY devel_scripts/docker/ros_custom/ ros_custom/
 
 # Set up ROS workspace and download custom package sources
