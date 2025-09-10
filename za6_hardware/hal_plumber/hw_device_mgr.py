@@ -30,9 +30,13 @@ from hw_device_mgr.mgr_ros_hal.mgr import ROSHALHWDeviceMgr
 from hw_device_mgr.ethercat.device import EtherCATSimDevice
 from hw_device_mgr.hal.device import HALPinSimDevice
 from hw_device_mgr.lcec.device import LCECDevice, LCECSimDevice
+from hw_device_mgr.lcec.config import LCECConfig
 from hw_device_mgr.devices.inovance_is620n import InovanceIS620N
 from hw_device_mgr.devices.inovance_sv660 import InovanceSV660
-from hw_device_mgr.devices.itegva_e7x import ITegvaE7820003ByteDevice
+from hw_device_mgr.devices.itegva_e7x import (
+    ITegvaE7820003ByteDevice,
+    ITegvaE7xConfig,
+)
 from hw_device_mgr.devices.bogus import BogusV1Servo
 
 
@@ -54,10 +58,15 @@ class ZAInovanceIS620N(ZADrives, InovanceIS620N):
     name = "ZA_IS620N"
 
 
+class ZAITegvaE7xConfig(ITegvaE7xConfig, LCECConfig):
+    """ZA iTegva E7x config on LCEC."""
+
+
 class ZAITegvaE7820003ByteDevice(ZADrives, ITegvaE7820003ByteDevice):
     """ZA iTegva E7.820.003 16 Dig In/16 Mosfet Out Access Byte on LCEC."""
 
     name = "ZA_E7.820.003"
+    config_class = ZAITegvaE7xConfig
 
 
 class ZAHWDeviceMgr(ROSHALHWDeviceMgr):

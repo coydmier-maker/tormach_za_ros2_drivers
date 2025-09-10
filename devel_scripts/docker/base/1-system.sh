@@ -6,6 +6,21 @@ BASE_SCRIPTS_DIR=${DOCKER_SCRIPTS_DIR}/base
 echo $'LANG=en_US.UTF-8\nLC_COLLATE=C.UTF-8' >/etc/default/locale
 
 ###########################
+# Checks
+###########################
+
+# If the EtherCAT master is running, the etherlabmaster-dkms install
+# will fail below.  Fail now to save some frustration.
+if grep -q /proc/modules -e ^ec_master; then
+    set +x
+    echo "WARNING:  The Docker image is known to not build" >&2
+    echo "WARNING:  when the EtherCAT master is running." >&2
+    echo "WARNING:  Stop the master and re-run the build:" >&2
+    echo "WARNING:      sudo systemctl stop ethercat" >&2
+    exit 1
+fi
+
+###########################
 # Update system & install general dependencies
 ###########################
 

@@ -249,7 +249,7 @@ class HALJointPlumber(HALPlumberBase):
             sig.link(f"hw_device_mgr.d0.{self.slavenum}.0.{name}")
             sig.link(f"drive_state.{self.slavenum}.{name}")
         # - link position + velocity fb + cmd to drive_state comp
-        for name in ('pos_fb', 'vel_fb', 'pos_cmd'):
+        for name in ('pos_fb', 'pos_cmd'):
             self.signal(name).link(f"drive_state.{self.slavenum}.{name}")
         # - status_word:  link to drive_safety
         sw_sig = self.signal('status_word')

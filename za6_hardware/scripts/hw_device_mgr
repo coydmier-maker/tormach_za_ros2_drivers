@@ -13,10 +13,12 @@ if __name__ == "__main__":
     )
     sim = "--sim" in argv
     if sim:
-        mgr = ZASimHWDeviceMgr()
+        mgr_cls = ZASimHWDeviceMgr
     else:
-        mgr = ZAHWDeviceMgr()
+        mgr_cls = ZAHWDeviceMgr
+    mgr_cls.init_class(argv)
+    mgr = mgr_cls()
     mgr.logger.setLevel("info")
     mgr.logger.info(f"Starting in {'sim' if sim else 'hardware'} mode")
-    mgr.init(argv)
+    mgr.init()
     mgr.run()

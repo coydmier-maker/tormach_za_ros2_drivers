@@ -2,7 +2,7 @@ component latency "system identification";
 license "Tormach internal license";
 
 pin in s32 curr_period "current thread period";
-pin out float curr_periodf "current thread period";
+pin out float curr_periodf=0.001 "current thread period";
 
 pin out s32 min "min period";
 pin out s32 max "max period";
