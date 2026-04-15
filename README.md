@@ -14,10 +14,10 @@ to
 and
 drive_state.py (located in /src/tormach_za_ros2_drivers/za6_hardware/hal_plumber) from:
 
-    drv_cls.init_class(sim_device_data=sim_dev_data)
+    self.drive_cls.init_sim(sim_device_data=self.sim_device_data)
 to
 
-    self.drive_cls.init_sim(sim_device_data=self.sim_device_data)
+    drv_cls.init_class(sim_device_data=sim_dev_data)
 
 Rebuild using after fixes:
 
