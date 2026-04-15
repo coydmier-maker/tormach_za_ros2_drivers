@@ -383,7 +383,7 @@ class HALPlumberSim(HALPlumber):
         sim_device_data_path = self.params["sim_device_data_path"]
         self.logger.info(f"Loading device config from {sim_device_data_path}")
         self.sim_device_data = ConfigIO.load_yaml_path(sim_device_data_path)
-        self.drive_cls.init_sim(sim_device_data=self.sim_device_data)
+        self.drive_cls.init_class(sim_device_data=self.sim_device_data)
 
         super().init_plumbing()
 
