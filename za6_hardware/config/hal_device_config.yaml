@@ -952,7 +952,7 @@
     # 0 to 3; def. 3
     # - 0:  All setting not saved/volatile
     # - 3:  Save everything to EEPROM/non-volatile
-    200E-02h: 0
+    200E-02h: 3
     #
     # EtherCAT slave name
     # 0 to 65535; no default (set by master)
