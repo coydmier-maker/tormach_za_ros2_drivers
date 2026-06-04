@@ -305,7 +305,7 @@
     # 0:  No operation
     # 1:  Restore default setting
     # 2:  Clear fault records
-    # 2002-20h:  0  # This command param; not setting
+    # 2002-20h:  1  # This command param; not setting
     #
     # Default keypad display
     # 0 to 99; def. 50
