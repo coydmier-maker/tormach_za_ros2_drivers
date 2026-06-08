@@ -1,0 +1,66 @@
+poses:
+
+  home:
+    type: joints
+    values: [0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+
+  uppies:
+    type: joints
+    values: [0.0, 0.0, 0.0, 0.3, 0.0, 0.0]
+
+  demo:
+    type: pose
+    position: [-0.32, -0.26, 1.07]
+    orientation: [0.0, -0.5, 0.26, 0.083]
+
+  meltio:
+    type: pose
+    position: [-0.53, 0.76, 0.33]
+    orientation: [-0.17, 0.87, 0.15, -0.44]
+
+  inspection:
+    type: pose
+    position: [0.43, -0.02, 0.72]
+    orientation: [-0.35, 0.82, 0.20, -0.40]
+
+  tall:
+    type: pose
+    position: [-0.14, -0.20, 1.18]
+    orientation: [-0.43, 0.73, -0.50, -0.19]
+
+  aLittleOffTheTop:
+    type: pose
+    position: [-0.47, 0.0, 0.72]
+    orientation: [0.68, -0.5, 0.49, -0.21]
+
+  plankPosition:
+    type: pose
+    position: [0.99, 0.0, 0.50]
+    orientation: [0.77, -0.22, 0.60, -0.06]
+
+  bentOver:
+    type: pose
+    position: [0.84, 0.17, 0.54]
+    orientation: [0.76, 0.41, 0.48, 0.15]
+
+  pickUp:
+    type: pose
+    position: [0.65058, 0.021823, 0.058298]
+    orientation: [0.73935, -0.16663, 0.62321, -0.19287]
+
+  preparing:
+    type: pose
+    position: [0.43691, 0.0055115, 0.090739]
+    orientation: [0.73955, -0.16664, 0.6231, -0.19246]
+
+  pickUpJoints:
+    type: joints
+    values: [0.022, 1.476, 0.525, 0.039, -0.056, -1.365]
+
+  preparingJoints:
+    type: joints
+    values: [-0.008, 1.448, 0.443, 0.526, -0.088, -1.813]
+
+  youRaiseMeUp:
+    type: joints
+    values: [-0.026, 0.728, 0.597, 0.277, -0.137, -0.855]

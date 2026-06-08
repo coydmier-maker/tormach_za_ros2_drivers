@@ -1,0 +1,41 @@
+boxes:
+
+  - name: table
+
+    position:
+      x: 0.6
+      y: 0.0
+      z: -0.05
+
+    size:
+      x: 1.524
+      y: 0.762
+      z: 0.1
+
+  - name: wall
+
+    position:
+      x: 0.42
+      y: -0.44 
+      z: 0.6
+
+    size:
+      x: 2.0
+      y: 0.1
+      z: 2.0
+
+  - name: meltio
+
+    position:
+      x: -0.65
+      y: 0.0
+      z: 0.75
+
+    size:
+      x: 0.56
+      y: 0.6
+      z: 1.4
+
+
+
+

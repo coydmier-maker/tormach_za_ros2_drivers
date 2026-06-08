@@ -1,0 +1,438 @@
+(ros2-devel@223+a5a6d185)pathpilot@ros2-devel:~/Desktop/aatormach$ ros2 launch src/tormach_za_ros2_drivers/za6_bringup/launch/bringup.launch 
+[INFO] [launch]: All log files can be found below /home/pathpilot/.ros/log/2026-06-01-12-58-36-465238-ros2-devel-155
+[INFO] [launch]: Default logging verbosity is set to INFO
+[INFO] [hal_mgr-1]: process details: cmd='/opt/ros/humble/lib/hal_hw_interface/hal_mgr --ros-args -r __node:=hal_mgr --params-file /tmp/launch_params_g77rvuuj', cwd='None', custom_env?=True
+[INFO] [hal_mgr-1]: process started with pid [168]
+[INFO] [spawner-2]: process started with pid [170]
+[INFO] [spawner-3]: process started with pid [172]
+[INFO] [spawner-4]: process started with pid [174]
+[INFO] [robot_state_publisher-5]: process started with pid [176]
+[INFO] [move_group-6]: process started with pid [178]
+[INFO] [rviz2-7]: process started with pid [180]
+[robot_state_publisher-5] [INFO 1780336717.556645410] [robot_state_publisher]: got segment base (setupURDF() at ./src/robot_state_publisher.cpp:201)
+[robot_state_publisher-5] [INFO 1780336717.556815253] [robot_state_publisher]: got segment base_link (setupURDF() at ./src/robot_state_publisher.cpp:201)
+[robot_state_publisher-5] [INFO 1780336717.556840344] [robot_state_publisher]: got segment flange (setupURDF() at ./src/robot_state_publisher.cpp:201)
+[robot_state_publisher-5] [INFO 1780336717.556856283] [robot_state_publisher]: got segment grasp_link (setupURDF() at ./src/robot_state_publisher.cpp:201)
+[robot_state_publisher-5] [INFO 1780336717.556871055] [robot_state_publisher]: got segment link_1 (setupURDF() at ./src/robot_state_publisher.cpp:201)
+[robot_state_publisher-5] [INFO 1780336717.556884974] [robot_state_publisher]: got segment link_2 (setupURDF() at ./src/robot_state_publisher.cpp:201)
+[robot_state_publisher-5] [INFO 1780336717.556898644] [robot_state_publisher]: got segment link_3 (setupURDF() at ./src/robot_state_publisher.cpp:201)
+[robot_state_publisher-5] [INFO 1780336717.556912277] [robot_state_publisher]: got segment link_4 (setupURDF() at ./src/robot_state_publisher.cpp:201)
+[robot_state_publisher-5] [INFO 1780336717.556926892] [robot_state_publisher]: got segment link_5 (setupURDF() at ./src/robot_state_publisher.cpp:201)
+[robot_state_publisher-5] [INFO 1780336717.556941142] [robot_state_publisher]: got segment link_6 (setupURDF() at ./src/robot_state_publisher.cpp:201)
+[robot_state_publisher-5] [INFO 1780336717.556955833] [robot_state_publisher]: got segment tool0 (setupURDF() at ./src/robot_state_publisher.cpp:201)
+[robot_state_publisher-5] [INFO 1780336717.556972623] [robot_state_publisher]: got segment world (setupURDF() at ./src/robot_state_publisher.cpp:201)
+[move_group-6] [INFO 1780336717.705738851] [moveit_rdf_loader.rdf_loader]: Loaded robot model in 0.00347855 seconds (RDFLoader() at ./rdf_loader/src/rdf_loader.cpp:80)
+[move_group-6] [INFO 1780336717.705873755] [moveit_robot_model.robot_model]: Loading robot model 'za6'... (buildModel() at ./robot_model/src/robot_model.cpp:89)
+[move_group-6] [INFO 1780336717.705898126] [moveit_robot_model.robot_model]: No root/virtual joint specified in SRDF. Assuming fixed joint (constructJointModel() at ./robot_model/src/robot_model.cpp:959)
+[move_group-6] [INFO 1780336717.808150481] [moveit_ros.planning_scene_monitor.planning_scene_monitor]: Publishing maintained planning scene on 'monitored_planning_scene' (startPublishingPlanningScene() at ./planning_scene_monitor/src/planning_scene_monitor.cpp:405)
+[move_group-6] [INFO 1780336717.808370640] [moveit.ros_planning_interface.moveit_cpp]: Listening to 'joint_states' for joint states (loadPlanningSceneMonitor() at ./moveit_cpp/src/moveit_cpp.cpp:101)
+[move_group-6] [INFO 1780336717.809129571] [moveit_ros.current_state_monitor]: Listening to joint states on topic 'joint_states' (startStateMonitor() at ./planning_scene_monitor/src/current_state_monitor.cpp:175)
+[move_group-6] [INFO 1780336717.809962644] [moveit_ros.planning_scene_monitor.planning_scene_monitor]: Listening to '/attached_collision_object' for attached collision objects (startStateMonitor() at ./planning_scene_monitor/src/planning_scene_monitor.cpp:1285)
+[move_group-6] [INFO 1780336717.810002856] [moveit_ros.planning_scene_monitor.planning_scene_monitor]: Starting planning scene monitor (startSceneMonitor() at ./planning_scene_monitor/src/planning_scene_monitor.cpp:1108)
+[move_group-6] [INFO 1780336717.811626394] [moveit_ros.planning_scene_monitor.planning_scene_monitor]: Listening to '/planning_scene' (startSceneMonitor() at ./planning_scene_monitor/src/planning_scene_monitor.cpp:1116)
+[move_group-6] [INFO 1780336717.811672745] [moveit_ros.planning_scene_monitor.planning_scene_monitor]: Starting world geometry update monitor for collision objects, attached objects, octomap updates. (startWorldGeometryMonitor() at ./planning_scene_monitor/src/planning_scene_monitor.cpp:1194)
+[move_group-6] [INFO 1780336717.812355161] [moveit_ros.planning_scene_monitor.planning_scene_monitor]: Listening to 'collision_object' (startWorldGeometryMonitor() at ./planning_scene_monitor/src/planning_scene_monitor.cpp:1203)
+[move_group-6] [INFO 1780336717.813113829] [moveit_ros.planning_scene_monitor.planning_scene_monitor]: Listening to 'planning_scene_world' for planning scene world geometry (startWorldGeometryMonitor() at ./planning_scene_monitor/src/planning_scene_monitor.cpp:1213)
+[move_group-6] [WARN 1780336717.813536505] [moveit.ros.occupancy_map_monitor.middleware_handle]: Resolution not specified for Octomap. Assuming resolution = 0.1 instead (OccupancyMapMonitorMiddlewareHandle() at ./src/occupancy_map_monitor_middleware_handle.cpp:77)
+[move_group-6] [ERROR 1780336717.813556601] [moveit.ros.occupancy_map_monitor.middleware_handle]: No 3D sensor plugin(s) defined for octomap updates (OccupancyMapMonitorMiddlewareHandle() at ./src/occupancy_map_monitor_middleware_handle.cpp:94)
+[move_group-6] [INFO 1780336717.814933230] [moveit.ros_planning_interface.moveit_cpp]: Loading planning pipeline 'ompl' (loadPlanningPipelines() at ./moveit_cpp/src/moveit_cpp.cpp:139)
+[hal_mgr-1] [INFO 1780336717.844968804] [hal_mgr]: Created node (init_ros_node() at /opt/ros/humble/local/lib/python3.10/dist-packages/hal_hw_interface/hal_obj_base.py:83)
+[hal_mgr-1] [INFO 1780336717.846066361] [hal_mgr]: Initializing 'hal_mgr' component (__attrs_post_init__() at /opt/ros/humble/local/lib/python3.10/dist-packages/hal_hw_interface/ros_hal_component.py:71)
+[hal_mgr-1] [INFO 1780336717.846971827] [hal_mgr]: New param 'update_rate', default 10 (get_ros_param() at /opt/ros/humble/local/lib/python3.10/dist-packages/hal_hw_interface/hal_obj_base.py:133)
+[hal_mgr-1] [INFO 1780336717.855552021] [hal_mgr]: New param 'hal_debug_output', default True (get_ros_param() at /opt/ros/humble/local/lib/python3.10/dist-packages/hal_hw_interface/hal_obj_base.py:133)
+[hal_mgr-1] [INFO 1780336717.857448399] [hal_mgr]: New param 'hal_debug_level', default 1 (get_ros_param() at /opt/ros/humble/local/lib/python3.10/dist-packages/hal_hw_interface/hal_obj_base.py:133)
+[hal_mgr-1] [INFO 1780336717.863082299] [hal_mgr]: Applying fastRTPS SHM hack:  /opt/ros/humble/share/hal_hw_interface/config/fastrtps_disable_shm.xml (start_realtime() at /opt/ros/humble/local/lib/python3.10/dist-packages/hal_hw_interface/hal_mgr.py:49)
+[hal_mgr-1] [INFO 1780336717.864038708] [hal_mgr]: Starting hal_mgr; debug=1/level=1 (start_realtime() at /opt/ros/humble/local/lib/python3.10/dist-packages/hal_hw_interface/hal_mgr.py:51)
+[move_group-6] [INFO 1780336717.865521808] [moveit.ros_planning.planning_pipeline]: Using planning interface 'OMPL' (configure() at ./planning_pipeline/src/planning_pipeline.cpp:139)
+[move_group-6] [INFO 1780336717.874304381] [moveit_ros.add_time_optimal_parameterization]: Param 'ompl.path_tolerance' was not set. Using default value: 0.100000 (getParam() at /opt/ros/humble/include/moveit/planning_request_adapter/planning_request_adapter.h:106)
+[move_group-6] [INFO 1780336717.874347790] [moveit_ros.add_time_optimal_parameterization]: Param 'ompl.resample_dt' was not set. Using default value: 0.100000 (getParam() at /opt/ros/humble/include/moveit/planning_request_adapter/planning_request_adapter.h:106)
+[move_group-6] [INFO 1780336717.874361544] [moveit_ros.add_time_optimal_parameterization]: Param 'ompl.min_angle_change' was not set. Using default value: 0.001000 (getParam() at /opt/ros/humble/include/moveit/planning_request_adapter/planning_request_adapter.h:106)
+[move_group-6] [INFO 1780336717.874405085] [moveit_ros.fix_workspace_bounds]: Param 'ompl.default_workspace_bounds' was not set. Using default value: 10.000000 (getParam() at /opt/ros/humble/include/moveit/planning_request_adapter/planning_request_adapter.h:106)
+[move_group-6] [INFO 1780336717.874440417] [moveit_ros.fix_start_state_bounds]: Param 'ompl.start_state_max_bounds_error' was set to 0.100000 (getParam() at /opt/ros/humble/include/moveit/planning_request_adapter/planning_request_adapter.h:112)
+[move_group-6] [INFO 1780336717.874453542] [moveit_ros.fix_start_state_bounds]: Param 'ompl.start_state_max_dt' was not set. Using default value: 0.500000 (getParam() at /opt/ros/humble/include/moveit/planning_request_adapter/planning_request_adapter.h:106)
+[move_group-6] [INFO 1780336717.874480329] [moveit_ros.fix_start_state_collision]: Param 'ompl.start_state_max_dt' was not set. Using default value: 0.500000 (getParam() at /opt/ros/humble/include/moveit/planning_request_adapter/planning_request_adapter.h:106)
+[move_group-6] [INFO 1780336717.874493136] [moveit_ros.fix_start_state_collision]: Param 'ompl.jiggle_fraction' was set to 0.050000 (getParam() at /opt/ros/humble/include/moveit/planning_request_adapter/planning_request_adapter.h:112)
+[move_group-6] [INFO 1780336717.874506260] [moveit_ros.fix_start_state_collision]: Param 'ompl.max_sampling_attempts' was not set. Using default value: 100 (getParam() at /opt/ros/humble/include/moveit/planning_request_adapter/planning_request_adapter.h:106)
+[move_group-6] [INFO 1780336717.874533381] [moveit.ros_planning.planning_pipeline]: Using planning request adapter 'Add Time Optimal Parameterization' (configure() at ./planning_pipeline/src/planning_pipeline.cpp:189)
+[move_group-6] [INFO 1780336717.874545878] [moveit.ros_planning.planning_pipeline]: Using planning request adapter 'Resolve constraint frames to robot links' (configure() at ./planning_pipeline/src/planning_pipeline.cpp:189)
+[move_group-6] [INFO 1780336717.874555192] [moveit.ros_planning.planning_pipeline]: Using planning request adapter 'Fix Workspace Bounds' (configure() at ./planning_pipeline/src/planning_pipeline.cpp:189)
+[move_group-6] [INFO 1780336717.874564724] [moveit.ros_planning.planning_pipeline]: Using planning request adapter 'Fix Start State Bounds' (configure() at ./planning_pipeline/src/planning_pipeline.cpp:189)
+[move_group-6] [INFO 1780336717.874573697] [moveit.ros_planning.planning_pipeline]: Using planning request adapter 'Fix Start State In Collision' (configure() at ./planning_pipeline/src/planning_pipeline.cpp:189)
+[move_group-6] [INFO 1780336717.874582089] [moveit.ros_planning.planning_pipeline]: Using planning request adapter 'Fix Start State Path Constraints' (configure() at ./planning_pipeline/src/planning_pipeline.cpp:189)
+[move_group-6] [INFO 1780336717.879975725] [moveit.ros_planning_interface.moveit_cpp]: Loading planning pipeline 'chomp' (loadPlanningPipelines() at ./moveit_cpp/src/moveit_cpp.cpp:139)
+[hal_mgr-1] rtapi_msgd command:  /usr/libexec/machinekit/rtapi_msgd --instance=0 --rtmsglevel=1 --usrmsglevel=1 --debug=1 --halsize=524288 -s
+[move_group-6] [INFO 1780336717.893909756] [moveit.ros_planning.planning_pipeline]: Using planning interface 'CHOMP' (configure() at ./planning_pipeline/src/planning_pipeline.cpp:139)
+[move_group-6] [INFO 1780336717.896407793] [moveit_ros.add_time_optimal_parameterization]: Param 'chomp.path_tolerance' was not set. Using default value: 0.100000 (getParam() at /opt/ros/humble/include/moveit/planning_request_adapter/planning_request_adapter.h:106)
+[move_group-6] [INFO 1780336717.896489024] [moveit_ros.add_time_optimal_parameterization]: Param 'chomp.resample_dt' was not set. Using default value: 0.100000 (getParam() at /opt/ros/humble/include/moveit/planning_request_adapter/planning_request_adapter.h:106)
+[move_group-6] [INFO 1780336717.896532164] [moveit_ros.add_time_optimal_parameterization]: Param 'chomp.min_angle_change' was not set. Using default value: 0.001000 (getParam() at /opt/ros/humble/include/moveit/planning_request_adapter/planning_request_adapter.h:106)
+[move_group-6] [INFO 1780336717.896574772] [moveit_ros.fix_workspace_bounds]: Param 'chomp.default_workspace_bounds' was not set. Using default value: 10.000000 (getParam() at /opt/ros/humble/include/moveit/planning_request_adapter/planning_request_adapter.h:106)
+[move_group-6] [INFO 1780336717.896605745] [moveit_ros.fix_start_state_bounds]: Param 'chomp.start_state_max_bounds_error' was set to 0.100000 (getParam() at /opt/ros/humble/include/moveit/planning_request_adapter/planning_request_adapter.h:112)
+[move_group-6] [INFO 1780336717.896619064] [moveit_ros.fix_start_state_bounds]: Param 'chomp.start_state_max_dt' was not set. Using default value: 0.500000 (getParam() at /opt/ros/humble/include/moveit/planning_request_adapter/planning_request_adapter.h:106)
+[move_group-6] [INFO 1780336717.896640681] [moveit_ros.fix_start_state_collision]: Param 'chomp.start_state_max_dt' was not set. Using default value: 0.500000 (getParam() at /opt/ros/humble/include/moveit/planning_request_adapter/planning_request_adapter.h:106)
+[move_group-6] [INFO 1780336717.896652065] [moveit_ros.fix_start_state_collision]: Param 'chomp.jiggle_fraction' was set to 0.050000 (getParam() at /opt/ros/humble/include/moveit/planning_request_adapter/planning_request_adapter.h:112)
+[move_group-6] [INFO 1780336717.896661621] [moveit_ros.fix_start_state_collision]: Param 'chomp.max_sampling_attempts' was not set. Using default value: 100 (getParam() at /opt/ros/humble/include/moveit/planning_request_adapter/planning_request_adapter.h:106)
+[move_group-6] [INFO 1780336717.896683092] [moveit.ros_planning.planning_pipeline]: Using planning request adapter 'Add Time Optimal Parameterization' (configure() at ./planning_pipeline/src/planning_pipeline.cpp:189)
+[move_group-6] [INFO 1780336717.896692854] [moveit.ros_planning.planning_pipeline]: Using planning request adapter 'Resolve constraint frames to robot links' (configure() at ./planning_pipeline/src/planning_pipeline.cpp:189)
+[move_group-6] [INFO 1780336717.896700408] [moveit.ros_planning.planning_pipeline]: Using planning request adapter 'Fix Workspace Bounds' (configure() at ./planning_pipeline/src/planning_pipeline.cpp:189)
+[move_group-6] [INFO 1780336717.896708074] [moveit.ros_planning.planning_pipeline]: Using planning request adapter 'Fix Start State Bounds' (configure() at ./planning_pipeline/src/planning_pipeline.cpp:189)
+[move_group-6] [INFO 1780336717.896715141] [moveit.ros_planning.planning_pipeline]: Using planning request adapter 'Fix Start State In Collision' (configure() at ./planning_pipeline/src/planning_pipeline.cpp:189)
+[move_group-6] [INFO 1780336717.896722750] [moveit.ros_planning.planning_pipeline]: Using planning request adapter 'Fix Start State Path Constraints' (configure() at ./planning_pipeline/src/planning_pipeline.cpp:189)
+[move_group-6] [INFO 1780336717.900346037] [moveit.ros_planning_interface.moveit_cpp]: Loading planning pipeline 'pilz_industrial_motion_planner' (loadPlanningPipelines() at ./moveit_cpp/src/moveit_cpp.cpp:139)
+[hal_mgr-1] rtapi_app command:  /usr/libexec/machinekit/rtapi_app --instance=0 --debug=1 -s
+[move_group-6] [INFO 1780336717.910706900] [moveit.pilz_industrial_motion_planner.joint_limits_aggregator]: Reading limits from namespace robot_description_planning (getAggregatedLimits() at ./src/joint_limits_aggregator.cpp:55)
+[move_group-6] [INFO 1780336717.917938456] [moveit.pilz_industrial_motion_planner]: Available plugins: pilz_industrial_motion_planner/PlanningContextLoaderCIRC pilz_industrial_motion_planner/PlanningContextLoaderLIN pilz_industrial_motion_planner/PlanningContextLoaderPTP  (initialize() at ./src/pilz_industrial_motion_planner.cpp:87)
+[move_group-6] [INFO 1780336717.917982495] [moveit.pilz_industrial_motion_planner]: About to load: pilz_industrial_motion_planner/PlanningContextLoaderCIRC (initialize() at ./src/pilz_industrial_motion_planner.cpp:92)
+[move_group-6] [INFO 1780336717.926656059] [moveit.pilz_industrial_motion_planner]: Registered Algorithm [CIRC] (registerContextLoader() at ./src/pilz_industrial_motion_planner.cpp:181)
+[move_group-6] [INFO 1780336717.926689443] [moveit.pilz_industrial_motion_planner]: About to load: pilz_industrial_motion_planner/PlanningContextLoaderLIN (initialize() at ./src/pilz_industrial_motion_planner.cpp:92)
+[hal_mgr-1] 3::238:rt INFO:  Picked default flavor 'rt-preempt' automatically
+[hal_mgr-1] Running '/usr/libexec/machinekit/cpu_dma_latency_helper'
+[move_group-6] [INFO 1780336717.931932725] [moveit.pilz_industrial_motion_planner]: Registered Algorithm [LIN] (registerContextLoader() at ./src/pilz_industrial_motion_planner.cpp:181)
+[move_group-6] [INFO 1780336717.931977713] [moveit.pilz_industrial_motion_planner]: About to load: pilz_industrial_motion_planner/PlanningContextLoaderPTP (initialize() at ./src/pilz_industrial_motion_planner.cpp:92)
+[move_group-6] [INFO 1780336717.936258657] [moveit.pilz_industrial_motion_planner]: Registered Algorithm [PTP] (registerContextLoader() at ./src/pilz_industrial_motion_planner.cpp:181)
+[move_group-6] [INFO 1780336717.936344404] [moveit.ros_planning.planning_pipeline]: Using planning interface 'Pilz Industrial Motion Planner' (configure() at ./planning_pipeline/src/planning_pipeline.cpp:139)
+[hal_mgr-1] cpu_dma_latency_helper:  Wrote 0x0000 to /dev/cpu_dma_latency; holding fd 3 open
+[move_group-6] [INFO 1780336717.985385996] [moveit.plugins.moveit_simple_controller_manager]: Added FollowJointTrajectory controller for joint_trajectory_controller (initialize() at ./src/moveit_simple_controller_manager.cpp:182)
+[move_group-6] [INFO 1780336717.987824815] [moveit.plugins.moveit_simple_controller_manager]: Added FollowJointTrajectory controller for streaming_controller (initialize() at ./src/moveit_simple_controller_manager.cpp:182)
+[move_group-6] [INFO 1780336717.988090189] [moveit.plugins.moveit_simple_controller_manager]: Returned 2 controllers in list (getControllersList() at ./src/moveit_simple_controller_manager.cpp:233)
+[move_group-6] [INFO 1780336717.988141265] [moveit.plugins.moveit_simple_controller_manager]: Returned 2 controllers in list (getControllersList() at ./src/moveit_simple_controller_manager.cpp:233)
+[move_group-6] [INFO 1780336717.988439945] [moveit_ros.trajectory_execution_manager]: Trajectory execution is managing controllers (initialize() at ./trajectory_execution_manager/src/trajectory_execution_manager.cpp:204)
+[move_group-6] [INFO 1780336717.988463375] [move_group.move_group]: MoveGroup debug mode is ON (main() at ./src/move_group.cpp:290)
+[move_group-6] [INFO 1780336718.034231941] [move_group.move_group]: 
+[move_group-6] 
+[move_group-6] ********************************************************
+[move_group-6] * MoveGroup using: 
+[move_group-6] *     - ApplyPlanningSceneService
+[move_group-6] *     - ClearOctomapService
+[move_group-6] *     - CartesianPathService
+[move_group-6] *     - ExecuteTrajectoryAction
+[move_group-6] *     - GetPlanningSceneService
+[move_group-6] *     - KinematicsService
+[move_group-6] *     - MoveAction
+[move_group-6] *     - MotionPlanService
+[move_group-6] *     - QueryPlannersService
+[move_group-6] *     - StateValidationService
+[move_group-6] ********************************************************
+[move_group-6]  (configureCapabilities() at ./src/move_group.cpp:195)
+[move_group-6] [INFO 1780336718.034304439] [moveit_move_group_capabilities_base.move_group_context]: MoveGroup context using planning plugin ompl_interface/OMPLPlanner (status() at ./src/move_group_context.cpp:96)
+[move_group-6] [INFO 1780336718.034323017] [moveit_move_group_capabilities_base.move_group_context]: MoveGroup context initialization complete (status() at ./src/move_group_context.cpp:97)
+[move_group-6] Loading 'move_group/ApplyPlanningSceneService'...
+[move_group-6] Loading 'move_group/ClearOctomapService'...
+[move_group-6] Loading 'move_group/MoveGroupCartesianPathService'...
+[move_group-6] Loading 'move_group/MoveGroupExecuteTrajectoryAction'...
+[move_group-6] Loading 'move_group/MoveGroupGetPlanningSceneService'...
+[move_group-6] Loading 'move_group/MoveGroupKinematicsService'...
+[move_group-6] Loading 'move_group/MoveGroupMoveAction'...
+[move_group-6] Loading 'move_group/MoveGroupPlanService'...
+[move_group-6] Loading 'move_group/MoveGroupQueryPlannersService'...
+[move_group-6] Loading 'move_group/MoveGroupStateValidationService'...
+[move_group-6] 
+[move_group-6] You can start planning now!
+[move_group-6] 
+[hal_mgr-1] [INFO 1780336718.093749016] [hal_mgr]: hal_mgr/ready topic new value:  True (publish_ready_topic() at /opt/ros/humble/local/lib/python3.10/dist-packages/hal_hw_interface/hal_mgr.py:91)
+[hal_mgr-1] [INFO 1780336718.094593560] [hal_mgr]: hal_mgr:  Started realtime (start_realtime() at /opt/ros/humble/local/lib/python3.10/dist-packages/hal_hw_interface/hal_mgr.py:64)
+[INFO] [hal_hw_interface.launch.hal_rt_node(hal_control_node)]: Loading HAL RT component /opt/ros/humble/lib/hal_control_node
+[INFO] [hal_hw_interface.launch.hal_rt_node(hal_control_node)]:   args: ARGV=--ros-args,--params-file,/tmp/launch_params_rs5rjk9t,--params-file,/home/pathpilot/Desktop/aatormach/install/za6_hardware/share/za6_hardware/config/hal_hw_interface.yaml,--params-file,/home/pathpilot/Desktop/aatormach/install/za6_moveit_config/share/za6_moveit_config/config/ros2_controllers.yaml
+[INFO] [hal_hw_interface.launch.hal_rt_node(hal_control_node)]: loadrt complete
+[hal_mgr-1] [INFO 1780336718.183931233] [hal_control_node]: Initialized HAL component 'hal_control_node' ID 75 (rtapi_app_main() at /root/ros_colcon_ws/src/hal_ros_control/hal_hw_interface/src/hal_control_node.cpp:121)
+[hal_mgr-1] [WARN 1780336718.295939001] [controller_manager]: [Deprecated] Passing the robot description parameter directly to the control_manager node is deprecated. Use '~/robot_description' topic from 'robot_state_publisher' instead. (ControllerManager() at ./src/controller_manager.cpp:295)
+[hal_mgr-1] [INFO 1780336718.296144707] [resource_manager]: Loading hardware 'hal_hw_interface'  (load_hardware() at ./src/resource_manager.cpp:88)
+[hal_mgr-1] [INFO 1780336718.300173732] [resource_manager]: Initialize hardware 'hal_hw_interface'  (initialize_hardware() at ./src/resource_manager.cpp:111)
+[hal_mgr-1] [INFO 1780336718.300211298] [hal_control_node_system_interface]: Initializing HAL hardware interface (on_init() at /root/ros_colcon_ws/src/hal_ros_control/hal_hw_interface/src/hal_system_interface.cpp:120)
+[hal_mgr-1] [INFO 1780336718.300232143] [hal_control_node_system_interface]: HAL component hal_control_node ID:  75 (on_init() at /root/ros_colcon_ws/src/hal_ros_control/hal_hw_interface/src/hal_system_interface.cpp:124)
+[hal_mgr-1] [INFO 1780336718.300382625] [hal_control_node_system_interface]: Initialized HAL pins (on_init() at /root/ros_colcon_ws/src/hal_ros_control/hal_hw_interface/src/hal_system_interface.cpp:151)
+[hal_mgr-1] [INFO 1780336718.300400968] [resource_manager]: Successful initialization of hardware 'hal_hw_interface' (initialize_hardware() at ./src/resource_manager.cpp:120)
+[hal_mgr-1] [INFO 1780336718.300414900] [hal_control_node_system_interface]: Exporting state interfaces (export_state_interfaces() at /root/ros_colcon_ws/src/hal_ros_control/hal_hw_interface/src/hal_system_interface.cpp:159)
+[hal_mgr-1] [INFO 1780336718.300442204] [hal_control_node_system_interface]: Exporting command interfaces (export_command_interfaces() at /root/ros_colcon_ws/src/hal_ros_control/hal_hw_interface/src/hal_system_interface.cpp:170)
+[hal_mgr-1] [INFO 1780336718.300483714] [resource_manager]: 'configure' hardware 'hal_hw_interface'  (operator()() at ./src/resource_manager.cpp:45)
+[hal_mgr-1] [INFO 1780336718.300501345] [resource_manager]: Successful 'configure' of hardware 'hal_hw_interface' (operator()() at ./src/resource_manager.cpp:54)
+[hal_mgr-1] [INFO 1780336718.300546556] [resource_manager]: 'activate' hardware 'hal_hw_interface'  (operator()() at ./src/resource_manager.cpp:45)
+[hal_mgr-1] [INFO 1780336718.300561909] [resource_manager]: Successful 'activate' of hardware 'hal_hw_interface' (operator()() at ./src/resource_manager.cpp:54)
+[hal_mgr-1] [INFO 1780336718.312887691] [hal_control_node]: HAL component ready! (rtapi_app_main() at /root/ros_colcon_ws/src/hal_ros_control/hal_hw_interface/src/hal_control_node.cpp:212)
+[hal_mgr-1] [INFO 1780336718.312924023] [controller_manager]: HAL controller manager initializing (rtapi_app_main() at /root/ros_colcon_ws/src/hal_ros_control/hal_hw_interface/src/hal_control_node.cpp:216)
+[INFO] [hal_hw_interface.launch.hal_ordered_action]: HAL action hal_control_node ready
+[spawner-4] [INFO 1780336718.239879596] [spawner_joint_state_broadcaster]: waiting for service /controller_manager/list_controllers to become available... (service_caller() at /opt/ros/humble/local/lib/python3.10/dist-packages/controller_manager/controller_manager_services.py:127)
+[spawner-2] [INFO 1780336718.247538866] [spawner_joint_trajectory_controller]: waiting for service /controller_manager/list_controllers to become available... (service_caller() at /opt/ros/humble/local/lib/python3.10/dist-packages/controller_manager/controller_manager_services.py:127)
+[spawner-3] [INFO 1780336718.250932391] [spawner_streaming_controller]: waiting for service /controller_manager/list_controllers to become available... (service_caller() at /opt/ros/humble/local/lib/python3.10/dist-packages/controller_manager/controller_manager_services.py:127)
+[INFO] [hal_hw_interface.launch.hal_ordered_action]: Executing deferred action <HalUserNode 'hw_device_mgr'>
+[INFO] [hw_device_mgr-8]: process details: cmd='/home/pathpilot/Desktop/aatormach/install/za6_hardware/lib/za6_hardware/hw_device_mgr --ros-args --params-file /tmp/launch_params_9n95w5c1 --params-file /home/pathpilot/Desktop/aatormach/install/za6_hardware/share/za6_hardware/config/hal_hw_device_mgr.yaml', cwd='None', custom_env?=True
+[INFO] [hw_device_mgr-8]: process started with pid [302]
+[hal_mgr-1] [INFO 1780336718.492341745] [controller_manager]: Loading controller 'joint_state_broadcaster' (load_controller() at ./src/controller_manager.cpp:608)
+[spawner-4] [INFO 1780336718.508935133] [spawner_joint_state_broadcaster]: Loaded joint_state_broadcaster (main() at /opt/ros/humble/local/lib/python3.10/dist-packages/controller_manager/spawner.py:237)
+[hal_mgr-1] [INFO 1780336718.509319195] [controller_manager]: Loading controller 'joint_trajectory_controller' (load_controller() at ./src/controller_manager.cpp:608)
+[spawner-2] [INFO 1780336718.537233268] [spawner_joint_trajectory_controller]: Loaded joint_trajectory_controller (main() at /opt/ros/humble/local/lib/python3.10/dist-packages/controller_manager/spawner.py:237)
+[hal_mgr-1] [INFO 1780336718.539119193] [controller_manager]: Loading controller 'streaming_controller' (load_controller() at ./src/controller_manager.cpp:608)
+[hal_mgr-1] [INFO 1780336718.556309755] [controller_manager]: Configuring controller 'joint_state_broadcaster' (configure_controller() at ./src/controller_manager.cpp:797)
+[hal_mgr-1] [INFO 1780336718.556448875] [joint_state_broadcaster]: 'joints' or 'interfaces' parameter is empty. All available state interfaces will be published (on_configure() at ./src/joint_state_broadcaster.cpp:108)
+[spawner-3] [INFO 1780336718.557465050] [spawner_streaming_controller]: Loaded streaming_controller (main() at /opt/ros/humble/local/lib/python3.10/dist-packages/controller_manager/spawner.py:237)
+[hal_mgr-1] [INFO 1780336718.573241729] [controller_manager]: Configuring controller 'joint_trajectory_controller' (configure_controller() at ./src/controller_manager.cpp:797)
+[hal_mgr-1] [INFO 1780336718.574085419] [joint_trajectory_controller]: No specific joint names are used for command interfaces. Using 'joints' parameter. (on_configure() at ./src/joint_trajectory_controller.cpp:693)
+[hal_mgr-1] [INFO 1780336718.574149063] [joint_trajectory_controller]: Command interfaces are [position velocity] and state interfaces are [position velocity]. (on_configure() at ./src/joint_trajectory_controller.cpp:822)
+[hal_mgr-1] [INFO 1780336718.574276805] [joint_trajectory_controller]: Using 'splines' interpolation method. (on_configure() at ./src/joint_trajectory_controller.cpp:833)
+[hal_mgr-1] [INFO 1780336718.575390252] [joint_trajectory_controller]: Controller state will be published at 50.00 Hz. (on_configure() at ./src/joint_trajectory_controller.cpp:847)
+[hal_mgr-1] [INFO 1780336718.587114261] [joint_trajectory_controller]: Action status changes will be monitored at 20.00 Hz. (on_configure() at ./src/joint_trajectory_controller.cpp:927)
+[hal_mgr-1] [INFO 1780336718.596781054] [controller_manager]: Configuring controller 'streaming_controller' (configure_controller() at ./src/controller_manager.cpp:797)
+[hal_mgr-1] [INFO 1780336718.597381180] [streaming_controller]: configure successful (on_configure() at ./src/forward_controllers_base.cpp:65)
+[hw_device_mgr-8] 2026-06-01 12:58:38,672 [INFO]hw_device_mgr.ethercat.xml_reader: Reading ESI from (hw_device_mgr.devices.device_xml, BogusServo.xml)
+[rviz2-7] [INFO 1780336718.674851045] [rviz2]: Stereo is NOT SUPPORTED (operator()() at ./src/main.cpp:62)
+[rviz2-7] [INFO 1780336718.674948632] [rviz2]: OpenGl version: 4.6 (GLSL 4.6) (operator()() at ./src/main.cpp:62)
+[hw_device_mgr-8] 2026-06-01 12:58:38,683 [INFO]hw_device_mgr.ethercat.xml_reader: Reading ESI from (hw_device_mgr.devices.device_xml, SV660_EOE_1Axis_V9.12.xml)
+[rviz2-7] [INFO 1780336718.724835724] [rviz2]: Stereo is NOT SUPPORTED (operator()() at ./src/main.cpp:62)
+[hw_device_mgr-8] 2026-06-01 12:58:38,724 [INFO]hw_device_mgr.ethercat.xml_reader: Reading ESI from (hw_device_mgr.devices.device_xml, iTegva_E7x_Series.xml)
+[hw_device_mgr-8] 2026-06-01 12:58:38,739 [INFO]hw_device_mgr.ethercat.xml_reader: Reading ESI from (hw_device_mgr.devices.device_xml, IS620N_v2.6.7.xml)
+[INFO] [spawner-3]: process has finished cleanly [pid 172]
+[hw_device_mgr-8] 2026-06-01 12:58:38,798 [INFO]ZA_device_mgr: Starting in hardware mode
+[hw_device_mgr-8] 2026-06-01 12:58:38,798 [INFO]ZA_device_mgr: Initializing 'ZA_device_mgr' ROS node
+[hw_device_mgr-8] 2026-06-01 12:58:38,800 [INFO]ZA_device_mgr: Reading device config from '/home/pathpilot/Desktop/aatormach/install/za6_hardware/share/za6_hardware/config/hal_device_config.yaml'
+[rviz2-7] Warning: class_loader.impl: SEVERE WARNING!!! A namespace collision has occurred with plugin factory for class rviz_default_plugins::displays::InteractiveMarkerDisplay. New factory will OVERWRITE existing one. This situation occurs when libraries containing plugins are directly linked against an executable (the one running right now generating this message). Please separate plugins out into their own library or just don't link against the library and use either class_loader::ClassLoader/MultiLibraryClassLoader to open.
+[rviz2-7]          at line 253 in /opt/ros/humble/include/class_loader/class_loader/class_loader_core.hpp
+[hw_device_mgr-8] 2026-06-01 12:58:38,992 [INFO]ZA_device_mgr: New device manager instance starting
+[hw_device_mgr-8] 2026-06-01 12:58:38,993 [INFO]ZA_device_mgr: Initializing devices
+[hw_device_mgr-8] 2026-06-01 12:58:38,995 [INFO]ZA_device_mgr: Device manager initialization complete
+[hw_device_mgr-8] 2026-06-01 12:58:38,996 [INFO]ZA_device_mgr: HAL component 'hw_device_mgr' ready
+[hw_device_mgr-8] 2026-06-01 12:58:38,996 [INFO]ZA_device_mgr: Initialized 'ZA_device_mgr' ROS node
+[INFO] [hal_hw_interface.launch.hal_ordered_action]: HAL action hw_device_mgr ready
+[INFO] [hal_hw_interface.launch.hal_ordered_action]: Executing deferred action <HalUserNode 'hal_io'>
+[INFO] [hal_io-9]: process details: cmd='/opt/ros/humble/lib/hal_hw_interface/hal_io /home/pathpilot/Desktop/aatormach/install/za6_hardware/share/za6_hardware/config/hal_io_config.yaml --ros-args --params-file /home/pathpilot/Desktop/aatormach/install/za6_hardware/share/za6_hardware/config/hal_io.yaml', cwd='None', custom_env?=True
+[INFO] [hal_io-9]: process started with pid [346]
+[hw_device_mgr-8] 2026-06-01 12:58:39,096 [INFO]ZA_device_mgr: Goal not reached:  Waiting on device manager internal transitions
+[hw_device_mgr-8] 2026-06-01 12:58:39,097 [INFO]ZA_device_mgr: Waiting for devices to come online before init
+[hw_device_mgr-8] 2026-06-01 12:58:39,097 [INFO]ZA_device_mgr: Command init completed
+[hw_device_mgr-8] 2026-06-01 12:58:39,097 [INFO]ZA_device_mgr: Devices all online; commanding stop state
+[hw_device_mgr-8] 2026-06-01 12:58:39,097 [INFO]ZA_device_mgr: Goal reached:  Reached
+[hw_device_mgr-8] 2026-06-01 12:58:39,098 [INFO]ZA_device_mgr: stop command:  Commanding drives reset faults
+[hw_device_mgr-8] 2026-06-01 12:58:39,098 [INFO]ZA_device_mgr: stop command:  Setting drive state command to SWITCH ON DISABLED
+[hw_device_mgr-8] 2026-06-01 12:58:39,098 [INFO]ZA_device_mgr: Goal not reached:  Waiting on device manager internal transitions
+[hw_device_mgr-8] 2026-06-01 12:58:39,098 [INFO]ZA_device_mgr: Command stop completed
+[hw_device_mgr-8] 2026-06-01 12:58:39,098 [INFO]ZA_device_mgr: Goal reached:  Reached
+[hal_io-9] [INFO 1780336719.337608104] [hal_io]: Created node (init_ros_node() at /opt/ros/humble/local/lib/python3.10/dist-packages/hal_hw_interface/hal_obj_base.py:83)
+[hal_io-9] [INFO 1780336719.338284267] [hal_io]: Initializing 'hal_io' component (__attrs_post_init__() at /opt/ros/humble/local/lib/python3.10/dist-packages/hal_hw_interface/ros_hal_component.py:71)
+[hal_io-9] [INFO 1780336719.338821173] [hal_io]: New param 'update_rate', default 10 (get_ros_param() at /opt/ros/humble/local/lib/python3.10/dist-packages/hal_hw_interface/hal_obj_base.py:133)
+[hal_io-9] [INFO 1780336719.340003013] [hal_io]: Reading config file '/home/pathpilot/Desktop/aatormach/install/za6_hardware/share/za6_hardware/config/hal_io_config.yaml' (read_config() at /opt/ros/humble/local/lib/python3.10/dist-packages/hal_hw_interface/hal_io_comp.py:58)
+[hal_io-9] [INFO 1780336719.350361162] [hal_io]: Created pin "dout01" type/dir "HAL_BIT/HAL_OUT" (_hal_init() at /opt/ros/humble/local/lib/python3.10/dist-packages/hal_hw_interface/ros_hal_pin.py:85)
+[hal_io-9] [INFO 1780336719.350982939] [hal_io]: Creating publisher on topic "dout01" (_ros_publisher_init() at /opt/ros/humble/local/lib/python3.10/dist-packages/hal_hw_interface/ros_hal_pin.py:209)
+[hal_io-9] [INFO 1780336719.352998993] [hal_io]: Creating subscriber on topic "hal_io/dout01" (_ros_subscriber_init() at /opt/ros/humble/local/lib/python3.10/dist-packages/hal_hw_interface/ros_hal_pin.py:297)
+[hal_io-9] [INFO 1780336719.354048424] [hal_io]: Created pin "dout02" type/dir "HAL_BIT/HAL_OUT" (_hal_init() at /opt/ros/humble/local/lib/python3.10/dist-packages/hal_hw_interface/ros_hal_pin.py:85)
+[hal_io-9] [INFO 1780336719.354588808] [hal_io]: Creating publisher on topic "dout02" (_ros_publisher_init() at /opt/ros/humble/local/lib/python3.10/dist-packages/hal_hw_interface/ros_hal_pin.py:209)
+[hal_io-9] [INFO 1780336719.355622266] [hal_io]: Creating subscriber on topic "hal_io/dout02" (_ros_subscriber_init() at /opt/ros/humble/local/lib/python3.10/dist-packages/hal_hw_interface/ros_hal_pin.py:297)
+[hal_io-9] [INFO 1780336719.356625383] [hal_io]: Created pin "dout03" type/dir "HAL_BIT/HAL_OUT" (_hal_init() at /opt/ros/humble/local/lib/python3.10/dist-packages/hal_hw_interface/ros_hal_pin.py:85)
+[hal_io-9] [INFO 1780336719.357182088] [hal_io]: Creating publisher on topic "dout03" (_ros_publisher_init() at /opt/ros/humble/local/lib/python3.10/dist-packages/hal_hw_interface/ros_hal_pin.py:209)
+[hal_io-9] [INFO 1780336719.358235847] [hal_io]: Creating subscriber on topic "hal_io/dout03" (_ros_subscriber_init() at /opt/ros/humble/local/lib/python3.10/dist-packages/hal_hw_interface/ros_hal_pin.py:297)
+[hal_io-9] [INFO 1780336719.359289367] [hal_io]: Created pin "dout04" type/dir "HAL_BIT/HAL_OUT" (_hal_init() at /opt/ros/humble/local/lib/python3.10/dist-packages/hal_hw_interface/ros_hal_pin.py:85)
+[hal_io-9] [INFO 1780336719.359842450] [hal_io]: Creating publisher on topic "dout04" (_ros_publisher_init() at /opt/ros/humble/local/lib/python3.10/dist-packages/hal_hw_interface/ros_hal_pin.py:209)
+[hal_io-9] [INFO 1780336719.360908210] [hal_io]: Creating subscriber on topic "hal_io/dout04" (_ros_subscriber_init() at /opt/ros/humble/local/lib/python3.10/dist-packages/hal_hw_interface/ros_hal_pin.py:297)
+[hal_io-9] [INFO 1780336719.362014760] [hal_io]: Created pin "dout05" type/dir "HAL_BIT/HAL_OUT" (_hal_init() at /opt/ros/humble/local/lib/python3.10/dist-packages/hal_hw_interface/ros_hal_pin.py:85)
+[hal_io-9] [INFO 1780336719.362602899] [hal_io]: Creating publisher on topic "dout05" (_ros_publisher_init() at /opt/ros/humble/local/lib/python3.10/dist-packages/hal_hw_interface/ros_hal_pin.py:209)
+[hal_io-9] [INFO 1780336719.363670791] [hal_io]: Creating subscriber on topic "hal_io/dout05" (_ros_subscriber_init() at /opt/ros/humble/local/lib/python3.10/dist-packages/hal_hw_interface/ros_hal_pin.py:297)
+[hal_io-9] [INFO 1780336719.364755136] [hal_io]: Created pin "dout06" type/dir "HAL_BIT/HAL_OUT" (_hal_init() at /opt/ros/humble/local/lib/python3.10/dist-packages/hal_hw_interface/ros_hal_pin.py:85)
+[hal_io-9] [INFO 1780336719.365350798] [hal_io]: Creating publisher on topic "dout06" (_ros_publisher_init() at /opt/ros/humble/local/lib/python3.10/dist-packages/hal_hw_interface/ros_hal_pin.py:209)
+[hal_io-9] [INFO 1780336719.366579192] [hal_io]: Creating subscriber on topic "hal_io/dout06" (_ros_subscriber_init() at /opt/ros/humble/local/lib/python3.10/dist-packages/hal_hw_interface/ros_hal_pin.py:297)
+[hal_io-9] [INFO 1780336719.367970381] [hal_io]: Created pin "dout07" type/dir "HAL_BIT/HAL_OUT" (_hal_init() at /opt/ros/humble/local/lib/python3.10/dist-packages/hal_hw_interface/ros_hal_pin.py:85)
+[hal_io-9] [INFO 1780336719.368642520] [hal_io]: Creating publisher on topic "dout07" (_ros_publisher_init() at /opt/ros/humble/local/lib/python3.10/dist-packages/hal_hw_interface/ros_hal_pin.py:209)
+[hal_io-9] [INFO 1780336719.370316320] [hal_io]: Creating subscriber on topic "hal_io/dout07" (_ros_subscriber_init() at /opt/ros/humble/local/lib/python3.10/dist-packages/hal_hw_interface/ros_hal_pin.py:297)
+[hal_io-9] [INFO 1780336719.371507486] [hal_io]: Created pin "dout08" type/dir "HAL_BIT/HAL_OUT" (_hal_init() at /opt/ros/humble/local/lib/python3.10/dist-packages/hal_hw_interface/ros_hal_pin.py:85)
+[hal_io-9] [INFO 1780336719.372109804] [hal_io]: Creating publisher on topic "dout08" (_ros_publisher_init() at /opt/ros/humble/local/lib/python3.10/dist-packages/hal_hw_interface/ros_hal_pin.py:209)
+[hal_io-9] [INFO 1780336719.373273053] [hal_io]: Creating subscriber on topic "hal_io/dout08" (_ros_subscriber_init() at /opt/ros/humble/local/lib/python3.10/dist-packages/hal_hw_interface/ros_hal_pin.py:297)
+[hal_io-9] [INFO 1780336719.374440896] [hal_io]: Created pin "dout09" type/dir "HAL_BIT/HAL_OUT" (_hal_init() at /opt/ros/humble/local/lib/python3.10/dist-packages/hal_hw_interface/ros_hal_pin.py:85)
+[hal_io-9] [INFO 1780336719.375027940] [hal_io]: Creating publisher on topic "dout09" (_ros_publisher_init() at /opt/ros/humble/local/lib/python3.10/dist-packages/hal_hw_interface/ros_hal_pin.py:209)
+[hal_io-9] [INFO 1780336719.376165096] [hal_io]: Creating subscriber on topic "hal_io/dout09" (_ros_subscriber_init() at /opt/ros/humble/local/lib/python3.10/dist-packages/hal_hw_interface/ros_hal_pin.py:297)
+[hal_io-9] [INFO 1780336719.377311215] [hal_io]: Created pin "dout10" type/dir "HAL_BIT/HAL_OUT" (_hal_init() at /opt/ros/humble/local/lib/python3.10/dist-packages/hal_hw_interface/ros_hal_pin.py:85)
+[hal_io-9] [INFO 1780336719.377920938] [hal_io]: Creating publisher on topic "dout10" (_ros_publisher_init() at /opt/ros/humble/local/lib/python3.10/dist-packages/hal_hw_interface/ros_hal_pin.py:209)
+[hal_io-9] [INFO 1780336719.379015598] [hal_io]: Creating subscriber on topic "hal_io/dout10" (_ros_subscriber_init() at /opt/ros/humble/local/lib/python3.10/dist-packages/hal_hw_interface/ros_hal_pin.py:297)
+[hal_io-9] [INFO 1780336719.380155962] [hal_io]: Created pin "dout11" type/dir "HAL_BIT/HAL_OUT" (_hal_init() at /opt/ros/humble/local/lib/python3.10/dist-packages/hal_hw_interface/ros_hal_pin.py:85)
+[hal_io-9] [INFO 1780336719.380801968] [hal_io]: Creating publisher on topic "dout11" (_ros_publisher_init() at /opt/ros/humble/local/lib/python3.10/dist-packages/hal_hw_interface/ros_hal_pin.py:209)
+[hal_io-9] [INFO 1780336719.381962818] [hal_io]: Creating subscriber on topic "hal_io/dout11" (_ros_subscriber_init() at /opt/ros/humble/local/lib/python3.10/dist-packages/hal_hw_interface/ros_hal_pin.py:297)
+[hal_io-9] [INFO 1780336719.383165648] [hal_io]: Created pin "dout12" type/dir "HAL_BIT/HAL_OUT" (_hal_init() at /opt/ros/humble/local/lib/python3.10/dist-packages/hal_hw_interface/ros_hal_pin.py:85)
+[hal_io-9] [INFO 1780336719.383805474] [hal_io]: Creating publisher on topic "dout12" (_ros_publisher_init() at /opt/ros/humble/local/lib/python3.10/dist-packages/hal_hw_interface/ros_hal_pin.py:209)
+[hal_io-9] [INFO 1780336719.384989930] [hal_io]: Creating subscriber on topic "hal_io/dout12" (_ros_subscriber_init() at /opt/ros/humble/local/lib/python3.10/dist-packages/hal_hw_interface/ros_hal_pin.py:297)
+[hal_io-9] [INFO 1780336719.386173666] [hal_io]: Created pin "dout13" type/dir "HAL_BIT/HAL_OUT" (_hal_init() at /opt/ros/humble/local/lib/python3.10/dist-packages/hal_hw_interface/ros_hal_pin.py:85)
+[hal_io-9] [INFO 1780336719.386779166] [hal_io]: Creating publisher on topic "dout13" (_ros_publisher_init() at /opt/ros/humble/local/lib/python3.10/dist-packages/hal_hw_interface/ros_hal_pin.py:209)
+[hal_io-9] [INFO 1780336719.387927854] [hal_io]: Creating subscriber on topic "hal_io/dout13" (_ros_subscriber_init() at /opt/ros/humble/local/lib/python3.10/dist-packages/hal_hw_interface/ros_hal_pin.py:297)
+[hal_io-9] [INFO 1780336719.389107267] [hal_io]: Created pin "dout14" type/dir "HAL_BIT/HAL_OUT" (_hal_init() at /opt/ros/humble/local/lib/python3.10/dist-packages/hal_hw_interface/ros_hal_pin.py:85)
+[hal_io-9] [INFO 1780336719.389708675] [hal_io]: Creating publisher on topic "dout14" (_ros_publisher_init() at /opt/ros/humble/local/lib/python3.10/dist-packages/hal_hw_interface/ros_hal_pin.py:209)
+[hal_io-9] [INFO 1780336719.390848979] [hal_io]: Creating subscriber on topic "hal_io/dout14" (_ros_subscriber_init() at /opt/ros/humble/local/lib/python3.10/dist-packages/hal_hw_interface/ros_hal_pin.py:297)
+[hal_io-9] [INFO 1780336719.391934119] [hal_io]: Created pin "dout15" type/dir "HAL_BIT/HAL_OUT" (_hal_init() at /opt/ros/humble/local/lib/python3.10/dist-packages/hal_hw_interface/ros_hal_pin.py:85)
+[hal_io-9] [INFO 1780336719.392533994] [hal_io]: Creating publisher on topic "dout15" (_ros_publisher_init() at /opt/ros/humble/local/lib/python3.10/dist-packages/hal_hw_interface/ros_hal_pin.py:209)
+[hal_io-9] [INFO 1780336719.393639776] [hal_io]: Creating subscriber on topic "hal_io/dout15" (_ros_subscriber_init() at /opt/ros/humble/local/lib/python3.10/dist-packages/hal_hw_interface/ros_hal_pin.py:297)
+[hal_io-9] [INFO 1780336719.394722368] [hal_io]: Created pin "dout16" type/dir "HAL_BIT/HAL_OUT" (_hal_init() at /opt/ros/humble/local/lib/python3.10/dist-packages/hal_hw_interface/ros_hal_pin.py:85)
+[hal_io-9] [INFO 1780336719.395340188] [hal_io]: Creating publisher on topic "dout16" (_ros_publisher_init() at /opt/ros/humble/local/lib/python3.10/dist-packages/hal_hw_interface/ros_hal_pin.py:209)
+[hal_io-9] [INFO 1780336719.396658825] [hal_io]: Creating subscriber on topic "hal_io/dout16" (_ros_subscriber_init() at /opt/ros/humble/local/lib/python3.10/dist-packages/hal_hw_interface/ros_hal_pin.py:297)
+[hal_io-9] [INFO 1780336719.398038845] [hal_io]: Created pin "control_mode" type/dir "HAL_S32/HAL_OUT" (_hal_init() at /opt/ros/humble/local/lib/python3.10/dist-packages/hal_hw_interface/ros_hal_pin.py:85)
+[hal_io-9] [INFO 1780336719.398713579] [hal_io]: Creating publisher on topic "control_mode" (_ros_publisher_init() at /opt/ros/humble/local/lib/python3.10/dist-packages/hal_hw_interface/ros_hal_pin.py:209)
+[hal_io-9] [INFO 1780336719.400669509] [hal_io]: Creating subscriber on topic "hal_io/control_mode" (_ros_subscriber_init() at /opt/ros/humble/local/lib/python3.10/dist-packages/hal_hw_interface/ros_hal_pin.py:297)
+[hal_io-9] [INFO 1780336719.401908655] [hal_io]: Created pin "din01" type/dir "HAL_BIT/HAL_IN" (_hal_init() at /opt/ros/humble/local/lib/python3.10/dist-packages/hal_hw_interface/ros_hal_pin.py:85)
+[hal_io-9] [INFO 1780336719.402498838] [hal_io]: Creating publisher on topic "din01" (_ros_publisher_init() at /opt/ros/humble/local/lib/python3.10/dist-packages/hal_hw_interface/ros_hal_pin.py:209)
+[hal_io-9] [INFO 1780336719.403781915] [hal_io]: Created pin "din02" type/dir "HAL_BIT/HAL_IN" (_hal_init() at /opt/ros/humble/local/lib/python3.10/dist-packages/hal_hw_interface/ros_hal_pin.py:85)
+[hal_io-9] [INFO 1780336719.404388069] [hal_io]: Creating publisher on topic "din02" (_ros_publisher_init() at /opt/ros/humble/local/lib/python3.10/dist-packages/hal_hw_interface/ros_hal_pin.py:209)
+[hal_io-9] [INFO 1780336719.405603032] [hal_io]: Created pin "din03" type/dir "HAL_BIT/HAL_IN" (_hal_init() at /opt/ros/humble/local/lib/python3.10/dist-packages/hal_hw_interface/ros_hal_pin.py:85)
+[hal_io-9] [INFO 1780336719.406216015] [hal_io]: Creating publisher on topic "din03" (_ros_publisher_init() at /opt/ros/humble/local/lib/python3.10/dist-packages/hal_hw_interface/ros_hal_pin.py:209)
+[hal_io-9] [INFO 1780336719.407392909] [hal_io]: Created pin "din04" type/dir "HAL_BIT/HAL_IN" (_hal_init() at /opt/ros/humble/local/lib/python3.10/dist-packages/hal_hw_interface/ros_hal_pin.py:85)
+[hal_io-9] [INFO 1780336719.408002813] [hal_io]: Creating publisher on topic "din04" (_ros_publisher_init() at /opt/ros/humble/local/lib/python3.10/dist-packages/hal_hw_interface/ros_hal_pin.py:209)
+[hal_io-9] [INFO 1780336719.409194753] [hal_io]: Created pin "din05" type/dir "HAL_BIT/HAL_IN" (_hal_init() at /opt/ros/humble/local/lib/python3.10/dist-packages/hal_hw_interface/ros_hal_pin.py:85)
+[hal_io-9] [INFO 1780336719.409882662] [hal_io]: Creating publisher on topic "din05" (_ros_publisher_init() at /opt/ros/humble/local/lib/python3.10/dist-packages/hal_hw_interface/ros_hal_pin.py:209)
+[hal_io-9] [INFO 1780336719.411078513] [hal_io]: Created pin "din06" type/dir "HAL_BIT/HAL_IN" (_hal_init() at /opt/ros/humble/local/lib/python3.10/dist-packages/hal_hw_interface/ros_hal_pin.py:85)
+[hal_io-9] [INFO 1780336719.411679259] [hal_io]: Creating publisher on topic "din06" (_ros_publisher_init() at /opt/ros/humble/local/lib/python3.10/dist-packages/hal_hw_interface/ros_hal_pin.py:209)
+[hal_io-9] [INFO 1780336719.412864535] [hal_io]: Created pin "din07" type/dir "HAL_BIT/HAL_IN" (_hal_init() at /opt/ros/humble/local/lib/python3.10/dist-packages/hal_hw_interface/ros_hal_pin.py:85)
+[hal_io-9] [INFO 1780336719.413465004] [hal_io]: Creating publisher on topic "din07" (_ros_publisher_init() at /opt/ros/humble/local/lib/python3.10/dist-packages/hal_hw_interface/ros_hal_pin.py:209)
+[hal_io-9] [INFO 1780336719.414640806] [hal_io]: Created pin "din08" type/dir "HAL_BIT/HAL_IN" (_hal_init() at /opt/ros/humble/local/lib/python3.10/dist-packages/hal_hw_interface/ros_hal_pin.py:85)
+[hal_io-9] [INFO 1780336719.415227375] [hal_io]: Creating publisher on topic "din08" (_ros_publisher_init() at /opt/ros/humble/local/lib/python3.10/dist-packages/hal_hw_interface/ros_hal_pin.py:209)
+[hal_io-9] [INFO 1780336719.416395832] [hal_io]: Created pin "din09" type/dir "HAL_BIT/HAL_IN" (_hal_init() at /opt/ros/humble/local/lib/python3.10/dist-packages/hal_hw_interface/ros_hal_pin.py:85)
+[hal_io-9] [INFO 1780336719.417001545] [hal_io]: Creating publisher on topic "din09" (_ros_publisher_init() at /opt/ros/humble/local/lib/python3.10/dist-packages/hal_hw_interface/ros_hal_pin.py:209)
+[hal_io-9] [INFO 1780336719.418125764] [hal_io]: Created pin "din10" type/dir "HAL_BIT/HAL_IN" (_hal_init() at /opt/ros/humble/local/lib/python3.10/dist-packages/hal_hw_interface/ros_hal_pin.py:85)
+[hal_io-9] [INFO 1780336719.418724885] [hal_io]: Creating publisher on topic "din10" (_ros_publisher_init() at /opt/ros/humble/local/lib/python3.10/dist-packages/hal_hw_interface/ros_hal_pin.py:209)
+[hal_io-9] [INFO 1780336719.419850745] [hal_io]: Created pin "din11" type/dir "HAL_BIT/HAL_IN" (_hal_init() at /opt/ros/humble/local/lib/python3.10/dist-packages/hal_hw_interface/ros_hal_pin.py:85)
+[hal_io-9] [INFO 1780336719.420434107] [hal_io]: Creating publisher on topic "din11" (_ros_publisher_init() at /opt/ros/humble/local/lib/python3.10/dist-packages/hal_hw_interface/ros_hal_pin.py:209)
+[hal_io-9] [INFO 1780336719.421576032] [hal_io]: Created pin "din12" type/dir "HAL_BIT/HAL_IN" (_hal_init() at /opt/ros/humble/local/lib/python3.10/dist-packages/hal_hw_interface/ros_hal_pin.py:85)
+[hal_io-9] [INFO 1780336719.422169114] [hal_io]: Creating publisher on topic "din12" (_ros_publisher_init() at /opt/ros/humble/local/lib/python3.10/dist-packages/hal_hw_interface/ros_hal_pin.py:209)
+[hal_io-9] [INFO 1780336719.423301799] [hal_io]: Created pin "din13" type/dir "HAL_BIT/HAL_IN" (_hal_init() at /opt/ros/humble/local/lib/python3.10/dist-packages/hal_hw_interface/ros_hal_pin.py:85)
+[hal_io-9] [INFO 1780336719.423888323] [hal_io]: Creating publisher on topic "din13" (_ros_publisher_init() at /opt/ros/humble/local/lib/python3.10/dist-packages/hal_hw_interface/ros_hal_pin.py:209)
+[hal_io-9] [INFO 1780336719.425046064] [hal_io]: Created pin "din14" type/dir "HAL_BIT/HAL_IN" (_hal_init() at /opt/ros/humble/local/lib/python3.10/dist-packages/hal_hw_interface/ros_hal_pin.py:85)
+[hal_io-9] [INFO 1780336719.425655250] [hal_io]: Creating publisher on topic "din14" (_ros_publisher_init() at /opt/ros/humble/local/lib/python3.10/dist-packages/hal_hw_interface/ros_hal_pin.py:209)
+[hal_io-9] [INFO 1780336719.426807891] [hal_io]: Created pin "din15" type/dir "HAL_BIT/HAL_IN" (_hal_init() at /opt/ros/humble/local/lib/python3.10/dist-packages/hal_hw_interface/ros_hal_pin.py:85)
+[hal_io-9] [INFO 1780336719.427473597] [hal_io]: Creating publisher on topic "din15" (_ros_publisher_init() at /opt/ros/humble/local/lib/python3.10/dist-packages/hal_hw_interface/ros_hal_pin.py:209)
+[hal_io-9] [INFO 1780336719.428740171] [hal_io]: Created pin "din16" type/dir "HAL_BIT/HAL_IN" (_hal_init() at /opt/ros/humble/local/lib/python3.10/dist-packages/hal_hw_interface/ros_hal_pin.py:85)
+[hal_io-9] [INFO 1780336719.429402328] [hal_io]: Creating publisher on topic "din16" (_ros_publisher_init() at /opt/ros/humble/local/lib/python3.10/dist-packages/hal_hw_interface/ros_hal_pin.py:209)
+[hal_io-9] [INFO 1780336719.430712999] [hal_io]: User component 'hal_io' ready (setup_component() at /opt/ros/humble/local/lib/python3.10/dist-packages/hal_hw_interface/ros_hal_component.py:105)
+[INFO] [hal_hw_interface.launch.hal_ordered_action]: HAL action hal_io ready
+[INFO] [hal_hw_interface.launch.hal_ordered_action]: Executing deferred action <HalUserNode 'drive_state'>
+[INFO] [drive_state-10]: process details: cmd='/home/pathpilot/Desktop/aatormach/install/za6_hardware/lib/za6_hardware/drive_state --ros-args --params-file /tmp/launch_params_zvs2nj_c', cwd='None', custom_env?=True
+[INFO] [drive_state-10]: process started with pid [358]
+[drive_state-10] [INFO 1780336719.786884651] [drive_state]: Created node (init_ros_node() at /opt/ros/humble/local/lib/python3.10/dist-packages/hal_hw_interface/hal_obj_base.py:83)
+[drive_state-10] [INFO 1780336719.794478477] [drive_state]: Service 'enable_drives' created (init_state_services() at /home/pathpilot/Desktop/aatormach/install/za6_hardware/local/lib/python3.10/dist-packages/hal_plumber/drive_state.py:176)
+[drive_state-10] [INFO 1780336719.795633171] [drive_state]: Service 'disable_drives' created (init_state_services() at /home/pathpilot/Desktop/aatormach/install/za6_hardware/local/lib/python3.10/dist-packages/hal_plumber/drive_state.py:183)
+[drive_state-10] [INFO 1780336719.796310987] [drive_state]: New param 'joint_trajectory_topic', default '/joint_trajectory_controller/joint_trajectory' (get_ros_param() at /opt/ros/humble/local/lib/python3.10/dist-packages/hal_hw_interface/hal_obj_base.py:133)
+[drive_state-10] [INFO 1780336719.797574405] [drive_state]: New param 'timeout', default 15 (get_ros_param() at /opt/ros/humble/local/lib/python3.10/dist-packages/hal_hw_interface/hal_obj_base.py:133)
+[drive_state-10] [INFO 1780336719.798718471] [drive_state]: New param 'update_rate', default 10 (get_ros_param() at /opt/ros/humble/local/lib/python3.10/dist-packages/hal_hw_interface/hal_obj_base.py:133)
+[drive_state-10] [INFO 1780336719.807976068] [drive_state]: Joint states sub + pub created (init_state_services() at /home/pathpilot/Desktop/aatormach/install/za6_hardware/local/lib/python3.10/dist-packages/hal_plumber/drive_state.py:195)
+[drive_state-10] [INFO 1780336719.812106221] [drive_state]: Service 'home_joint' created (init_home_service() at /home/pathpilot/Desktop/aatormach/install/za6_hardware/local/lib/python3.10/dist-packages/hal_plumber/drive_state.py:466)
+[drive_state-10] [INFO 1780336719.813413581] [drive_state]: Publisher 'drives_enabled' created (init_topics() at /home/pathpilot/Desktop/aatormach/install/za6_hardware/local/lib/python3.10/dist-packages/hal_plumber/drive_state.py:478)
+[drive_state-10] [INFO 1780336719.814535631] [drive_state]: Publisher 'drives_faulted' created (init_topics() at /home/pathpilot/Desktop/aatormach/install/za6_hardware/local/lib/python3.10/dist-packages/hal_plumber/drive_state.py:486)
+[drive_state-10] [INFO 1780336719.815272146] [drive_state]: Initializing 'drive_state' component (__attrs_post_init__() at /opt/ros/humble/local/lib/python3.10/dist-packages/hal_hw_interface/ros_hal_component.py:71)
+[drive_state-10] [INFO 1780336719.816069642] [drive_state]: New param 'device_config_path', default '' (get_ros_param() at /opt/ros/humble/local/lib/python3.10/dist-packages/hal_hw_interface/hal_obj_base.py:133)
+[drive_state-10] [INFO 1780336719.998665607] [drive_state]: New param 'sim_mode', default False (get_ros_param() at /opt/ros/humble/local/lib/python3.10/dist-packages/hal_hw_interface/hal_obj_base.py:133)
+[drive_state-10] 2026-06-01 12:58:39,999 [INFO]hw_device_mgr.ethercat.xml_reader: Reading ESI from (hw_device_mgr.devices.device_xml, IS620N_v2.6.7.xml)
+[drive_state-10] 2026-06-01 12:58:40,037 [INFO]hw_device_mgr.ethercat.xml_reader: Reading ESI from (hw_device_mgr.devices.device_xml, BogusServo.xml)
+[drive_state-10] 2026-06-01 12:58:40,043 [INFO]hw_device_mgr.ethercat.xml_reader: Reading ESI from (hw_device_mgr.devices.device_xml, SV660_EOE_1Axis_V9.12.xml)
+[drive_state-10] 2026-06-01 12:58:40,079 [INFO]hw_device_mgr.ethercat.xml_reader: Reading ESI from (hw_device_mgr.devices.device_xml, iTegva_E7x_Series.xml)
+[drive_state-10] [INFO 1780336720.101461992] [drive_state]: Drive scan found 0 devices: (init_hal_comp() at /home/pathpilot/Desktop/aatormach/install/za6_hardware/local/lib/python3.10/dist-packages/hal_plumber/drive_state.py:113)
+[drive_state-10] Traceback (most recent call last):
+[drive_state-10]   File "/home/pathpilot/Desktop/aatormach/install/za6_hardware/lib/za6_hardware/drive_state", line 12, in <module>
+[drive_state-10]     ds = DriveState(argv=sys.argv[1:], qos_reliability_policy="RELIABLE")
+[drive_state-10]   File "<attrs generated init hal_plumber.drive_state.DriveState>", line 7, in __init__
+[drive_state-10]   File "/opt/ros/humble/local/lib/python3.10/dist-packages/hal_hw_interface/ros_hal_component.py", line 78, in __attrs_post_init__
+[drive_state-10]     self.init_hal_comp()
+[drive_state-10]   File "/home/pathpilot/Desktop/aatormach/install/za6_hardware/local/lib/python3.10/dist-packages/hal_plumber/drive_state.py", line 118, in init_hal_comp
+[drive_state-10]     assert self.num_joints, "No drives found"
+[drive_state-10] AssertionError: No drives found
+[ERROR] [drive_state-10]: process has died [pid 358, exit code 1, cmd '/home/pathpilot/Desktop/aatormach/install/za6_hardware/lib/za6_hardware/drive_state --ros-args --params-file /tmp/launch_params_zvs2nj_c'].
+[rviz2-7] [ERROR 1780336721.952116191] [moveit_ros_visualization.motion_planning_frame]: Action server: /recognize_objects not available (MotionPlanningFrame() at ./motion_planning_rviz_plugin/src/motion_planning_frame.cpp:214)
+[rviz2-7] [INFO 1780336721.975915928] [moveit_ros_visualization.motion_planning_frame]: MoveGroup namespace changed: / -> . Reloading params. (enable() at ./motion_planning_rviz_plugin/src/motion_planning_frame.cpp:597)
+[rviz2-7] [INFO 1780336722.463908241] [moveit_rdf_loader.rdf_loader]: Loaded robot model in 0.417866 seconds (RDFLoader() at ./rdf_loader/src/rdf_loader.cpp:80)
+[rviz2-7] [INFO 1780336722.463959429] [moveit_robot_model.robot_model]: Loading robot model 'za6'... (buildModel() at ./robot_model/src/robot_model.cpp:89)
+[rviz2-7] [INFO 1780336722.463979732] [moveit_robot_model.robot_model]: No root/virtual joint specified in SRDF. Assuming fixed joint (constructJointModel() at ./robot_model/src/robot_model.cpp:959)
+[rviz2-7] [INFO 1780336722.505857011] [moveit_ros.planning_scene_monitor.planning_scene_monitor]: Starting planning scene monitor (startSceneMonitor() at ./planning_scene_monitor/src/planning_scene_monitor.cpp:1108)
+[rviz2-7] [INFO 1780336722.507437509] [moveit_ros.planning_scene_monitor.planning_scene_monitor]: Listening to '/monitored_planning_scene' (startSceneMonitor() at ./planning_scene_monitor/src/planning_scene_monitor.cpp:1116)
+[rviz2-7] [INFO 1780336722.713728311] [interactive_marker_display_94599716854496]: Connected on namespace: /rviz_moveit_motion_planning_display/robot_interaction_interactive_marker_topic (updateStatus() at ./src/interactive_marker_client.cpp:406)
+[rviz2-7] [INFO 1780336722.721807980] [moveit_ros_visualization.motion_planning_frame]: group manipulator (changePlanningGroupHelper() at ./motion_planning_rviz_plugin/src/motion_planning_frame.cpp:379)
+[rviz2-7] [INFO 1780336722.721834936] [moveit_ros_visualization.motion_planning_frame]: Constructing new MoveGroup connection for group 'manipulator' in namespace '' (changePlanningGroupHelper() at ./motion_planning_rviz_plugin/src/motion_planning_frame.cpp:382)
+[rviz2-7] [INFO 1780336722.737524309] [interactive_marker_display_94599716854496]: Sending request for interactive markers (updateStatus() at ./src/interactive_marker_client.cpp:406)
+[rviz2-7] [INFO 1780336722.744137805] [move_group_interface]: Ready to take commands for planning group manipulator. (MoveGroupInterfaceImpl() at ./move_group_interface/src/move_group_interface.cpp:185)
+[rviz2-7] [INFO 1780336722.747474854] [moveit_ros_visualization.motion_planning_frame]: group manipulator (changePlanningGroupHelper() at ./motion_planning_rviz_plugin/src/motion_planning_frame.cpp:379)
+[rviz2-7] [INFO 1780336722.769238150] [interactive_marker_display_94599716854496]: Service response received for initialization (updateStatus() at ./src/interactive_marker_client.cpp:406)
+[INFO] [launch.user]: Shutting down:  HAL action drive_state ready wait timed out
+[WARNING] [hal_hw_interface.launch.hal_ordered_action]: Canceling handler <HalFiles 'hal_files'>
+[INFO] [hal_io-9]: sending signal 'SIGINT' to process[hal_io-9]
+[INFO] [hw_device_mgr-8]: sending signal 'SIGINT' to process[hw_device_mgr-8]
+[INFO] [rviz2-7]: sending signal 'SIGINT' to process[rviz2-7]
+[INFO] [move_group-6]: sending signal 'SIGINT' to process[move_group-6]
+[INFO] [robot_state_publisher-5]: sending signal 'SIGINT' to process[robot_state_publisher-5]
+[INFO] [spawner-4]: sending signal 'SIGINT' to process[spawner-4]
+[INFO] [spawner-2]: sending signal 'SIGINT' to process[spawner-2]
+[INFO] [hal_mgr-1]: sending signal 'SIGINT' to process[hal_mgr-1]
+[hal_io-9] [WARN 1780336724.706581413] [hal_io]: Shutting down on keyboard interrupt (main() at /opt/ros/humble/local/lib/python3.10/dist-packages/hal_hw_interface/ros_hal_component.py:163)
+[hal_io-9] Failed to publish log message to rosout: publisher's context is invalid, at ./src/rcl/publisher.c:389
+[hal_io-9] Traceback (most recent call last):
+[hal_io-9]   File "/opt/ros/humble/lib/hal_hw_interface/hal_io", line 38, in <module>
+[hal_io-9]     HalIO(sys.argv[1:]).main()
+[hal_io-9]   File "/opt/ros/humble/local/lib/python3.10/dist-packages/hal_hw_interface/ros_hal_component.py", line 165, in main
+[hal_io-9]     self.node_context.shutdown()
+[hal_io-9]   File "/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/context.py", line 102, in shutdown
+[hal_io-9]     self.__context.shutdown()
+[hal_io-9] rclpy._rclpy_pybind11.RCLError: failed to shutdown: rcl_shutdown already called on the given context, at ./src/rcl/init.c:241
+[hw_device_mgr-8] 2026-06-01 12:58:44,708 [WARNING]ZA_device_mgr: Caught KeyboardInterrupt
+[hw_device_mgr-8] 2026-06-01 12:58:44,708 [INFO]ZA_device_mgr: Shutting down
+[hw_device_mgr-8] Traceback (most recent call last):
+[hw_device_mgr-8]   File "/home/pathpilot/Desktop/aatormach/install/za6_hardware/lib/za6_hardware/hw_device_mgr", line 24, in <module>
+[hw_device_mgr-8]     mgr.run()
+[hw_device_mgr-8]   File "/opt/ros/humble/lib/python3.10/site-packages/hw_device_mgr/mgr_ros/mgr.py", line 132, in run
+[hw_device_mgr-8]     rclpy.shutdown()
+[hw_device_mgr-8]   File "/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/__init__.py", line 130, in shutdown
+[hw_device_mgr-8]     _shutdown(context=context)
+[hw_device_mgr-8]   File "/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/utilities.py", line 58, in shutdown
+[hw_device_mgr-8]     return context.shutdown()
+[hw_device_mgr-8]   File "/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/context.py", line 102, in shutdown
+[rviz2-7] [INFO 1780336724.710327305] [rclcpp]: signal_handler(SIGINT/SIGTERM) (deferred_signal_handler() at ./src/rclcpp/signal_handler.cpp:258)
+[hw_device_mgr-8]     self.__context.shutdown()
+[hw_device_mgr-8] rclpy._rclpy_pybind11.RCLError: failed to shutdown: rcl_shutdown already called on the given context, at ./src/rcl/init.c:241
+[move_group-6] [INFO 1780336724.713720915] [rclcpp]: signal_handler(SIGINT/SIGTERM) (deferred_signal_handler() at ./src/rclcpp/signal_handler.cpp:258)
+[robot_state_publisher-5] [INFO 1780336724.717919896] [rclcpp]: signal_handler(SIGINT/SIGTERM) (deferred_signal_handler() at ./src/rclcpp/signal_handler.cpp:258)
+[rviz2-7] [WARN 1780336724.721565452] [interactive_marker_display_94599716854496]: Server not available while running, resetting (updateStatus() at ./src/interactive_marker_client.cpp:409)
+[hal_mgr-1] [WARN 1780336724.738875281] [hal_mgr]: Shutting down on keyboard interrupt (main() at /opt/ros/humble/local/lib/python3.10/dist-packages/hal_hw_interface/ros_hal_component.py:163)
+[hal_mgr-1] Failed to publish log message to rosout: publisher's context is invalid, at ./src/rcl/publisher.c:389
+[hal_mgr-1] [INFO 1780336724.742703847] [hal_mgr]: Running shutdown cb 999 (_run_shutdown_cbs() at /opt/ros/humble/local/lib/python3.10/dist-packages/hal_hw_interface/hal_obj_base.py:172)
+[hal_mgr-1] Failed to publish log message to rosout: publisher's context is invalid, at ./src/rcl/publisher.c:389
+[hal_mgr-1] [WARN 1780336724.744011926] [hal_mgr]: Stopping realtime (stop_realtime() at /opt/ros/humble/local/lib/python3.10/dist-packages/hal_hw_interface/hal_mgr.py:67)
+[hal_mgr-1] Failed to publish log message to rosout: publisher's context is invalid, at ./src/rcl/publisher.c:389
+[move_group-6] [INFO 1780336724.774232136] [moveit.ros_planning_interface.moveit_cpp]: Deleting MoveItCpp (~MoveItCpp() at ./moveit_cpp/src/moveit_cpp.cpp:88)
+[move_group-6] [INFO 1780336724.776720045] [moveit_ros.planning_scene_monitor.planning_scene_monitor]: Stopped publishing maintained planning scene. (stopPublishingPlanningScene() at ./planning_scene_monitor/src/planning_scene_monitor.cpp:394)
+[move_group-6] [INFO 1780336724.782125813] [moveit_ros.planning_scene_monitor.planning_scene_monitor]: Stopping world geometry monitor (stopWorldGeometryMonitor() at ./planning_scene_monitor/src/planning_scene_monitor.cpp:1241)
+[move_group-6] [INFO 1780336724.786934741] [moveit_ros.planning_scene_monitor.planning_scene_monitor]: Stopping planning scene monitor (stopSceneMonitor() at ./planning_scene_monitor/src/planning_scene_monitor.cpp:1124)
+[move_group-6] Warning: class_loader.ClassLoader: SEVERE WARNING!!! Attempting to unload library while objects created by this loader exist in the heap! You should delete your objects before attempting to unload the library or destroying the ClassLoader. The library will NOT be unloaded.
+[move_group-6]          at line 127 in ./src/class_loader.cpp
+[hal_mgr-1] [INFO 1780336724.799465043] [controller_manager]: rtapi_app_exit():  HAL controller manager shutting down (rtapi_app_exit() at /root/ros_colcon_ws/src/hal_ros_control/hal_hw_interface/src/hal_control_node.cpp:252)
+[rviz2-7] 
+[rviz2-7] >>> [rcutils|error_handling.c:108] rcutils_set_error_state()
+[rviz2-7] This error state is being overwritten:
+[rviz2-7] 
+[rviz2-7]   'rcl node's context is invalid, at ./src/rcl/node.c:428'
+[rviz2-7] 
+[rviz2-7] with this new error message:
+[rviz2-7] 
+[rviz2-7]   'publisher's context is invalid, at ./src/rcl/publisher.c:389'
+[rviz2-7] 
+[rviz2-7] rcutils_reset_error() should be called after error handling to avoid this.
+[rviz2-7] <<<
+[rviz2-7] [INFO 1780336724.857142441] [moveit_ros.planning_scene_monitor.planning_scene_monitor]: Stopping planning scene monitor (stopSceneMonitor() at ./planning_scene_monitor/src/planning_scene_monitor.cpp:1124)
+[move_group-6] Stack trace (most recent call last):
+[move_group-6] #16   Object "", at 0xffffffffffffffff, in 
+[move_group-6] #15   Object "/opt/ros/humble/lib/moveit_ros_move_group/move_group", at 0x556fd002b724, in 
+[move_group-6] #14   Object "/usr/lib/x86_64-linux-gnu/libc.so.6", at 0x7f8dd6e84e3f, in __libc_start_main
+[move_group-6] #13   Object "/usr/lib/x86_64-linux-gnu/libc.so.6", at 0x7f8dd6e84d8f, in 
+[move_group-6] #12   Object "/opt/ros/humble/lib/moveit_ros_move_group/move_group", at 0x556fd002a65b, in 
+[move_group-6] #11   Object "/opt/ros/humble/lib/moveit_ros_move_group/move_group", at 0x556fd002c709, in 
+[move_group-6] #10   Object "/opt/ros/humble/lib/libmoveit_cpp.so.2.5.9", at 0x7f8dd77e4876, in moveit_cpp::MoveItCpp::~MoveItCpp()
+[move_group-6] #9    Object "/opt/ros/humble/lib/libmoveit_cpp.so.2.5.9", at 0x7f8dd77e2ba9, in 
+[move_group-6] #8    Object "/opt/ros/humble/lib/libmoveit_trajectory_execution_manager.so.2.5.9", at 0x7f8dd6b7a3b5, in trajectory_execution_manager::TrajectoryExecutionManager::~TrajectoryExecutionManager()
+[move_group-6] #7    Object "/opt/ros/humble/lib/libmoveit_trajectory_execution_manager.so.2.5.9", at 0x7f8dd6b8d2d9, in 
+[move_group-6] #6    Object "/opt/ros/humble/lib/librclcpp.so", at 0x7f8dd7445b8c, in rclcpp::Node::~Node()
+[move_group-6] #5    Object "/opt/ros/humble/lib/librclcpp.so", at 0x7f8dd7445b2e, in rclcpp::Node::~Node()
+[move_group-6] #4    Object "/opt/ros/humble/lib/librclcpp.so", at 0x7f8dd7420d39, in 
+[move_group-6] #3    Object "/opt/ros/humble/lib/librclcpp.so", at 0x7f8dd744f0b9, in 
+[move_group-6] #2    Object "/opt/ros/humble/lib/librclcpp.so", at 0x7f8dd744f000, in rclcpp::node_interfaces::NodeBase::~NodeBase()
+[move_group-6] #1    Object "/opt/ros/humble/lib/librclcpp.so", at 0x7f8dd7420d39, in 
+[move_group-6] #0    Object "/opt/ros/humble/lib/librclcpp.so", at 0x7f8dd7425b31, in rclcpp::CallbackGroup::~CallbackGroup()
+[move_group-6] Segmentation fault (Address not mapped to object [0x7f8dc871f798])
+[INFO] [robot_state_publisher-5]: process has finished cleanly [pid 176]
+[ERROR] [hw_device_mgr-8]: process has died [pid 302, exit code 1, cmd '/home/pathpilot/Desktop/aatormach/install/za6_hardware/lib/za6_hardware/hw_device_mgr --ros-args --params-file /tmp/launch_params_9n95w5c1 --params-file /home/pathpilot/Desktop/aatormach/install/za6_hardware/share/za6_hardware/config/hal_hw_device_mgr.yaml'].
+[ERROR] [hal_io-9]: process has died [pid 346, exit code 1, cmd '/opt/ros/humble/lib/hal_hw_interface/hal_io /home/pathpilot/Desktop/aatormach/install/za6_hardware/share/za6_hardware/config/hal_io_config.yaml --ros-args --params-file /home/pathpilot/Desktop/aatormach/install/za6_hardware/share/za6_hardware/config/hal_io.yaml'].
+[ERROR] [move_group-6]: process has died [pid 178, exit code -11, cmd '/opt/ros/humble/lib/moveit_ros_move_group/move_group --ros-args --params-file /tmp/launch_params_vwdea4bm --params-file /tmp/launch_params_vp55ik8k'].
+[move_group-6] 
+[ERROR] [rviz2-7]: process has died [pid 180, exit code -11, cmd '/opt/ros/humble/lib/rviz2/rviz2 -d /home/pathpilot/Desktop/aatormach/install/za6_moveit_config/share/za6_moveit_config/config/moveit.rviz --ros-args --params-file /tmp/launch_params_6wis3wz9 --params-file /tmp/launch_params_hj8z8raf'].
+[INFO] [spawner-4]: process has finished cleanly [pid 174]
+[INFO] [spawner-2]: process has finished cleanly [pid 170]
+[ERROR] [hal_mgr-1]: process[hal_mgr-1] failed to terminate '5' seconds after receiving 'SIGINT', escalating to 'SIGTERM'
+[INFO] [hal_mgr-1]: sending signal 'SIGTERM' to process[hal_mgr-1]
+[ERROR] [hal_mgr-1]: process[hal_mgr-1] failed to terminate '10.0' seconds after receiving 'SIGTERM', escalating to 'SIGKILL'
+[INFO] [hal_mgr-1]: sending signal 'SIGKILL' to process[hal_mgr-1]
+[ERROR] [hal_mgr-1]: process has died [pid 168, exit code -9, cmd '/opt/ros/humble/lib/hal_hw_interface/hal_mgr --ros-args -r __node:=hal_mgr --params-file /tmp/launch_params_g77rvuuj'].
+[INFO] [launch.user]: hal_mgr shutting down:  Exited
+[ERROR] [launch]: Caught exception in launch (see debug for traceback): Cannot shutdown a ROS adapter that is not running
