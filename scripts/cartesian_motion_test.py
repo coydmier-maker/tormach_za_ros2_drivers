@@ -5,7 +5,7 @@ from pathlib import Path
 import rclpy
 from rclpy.executors import SingleThreadedExecutor
 
-from python_api.src.za6_robot import ZA6Robot
+from .python_api.src.za6_robot import ZA6Robot
 
 
 def main():
