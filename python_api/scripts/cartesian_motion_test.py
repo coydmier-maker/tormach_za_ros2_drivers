@@ -1,10 +1,18 @@
 #!/usr/bin/env python3
 
+import os
+import sys
 import time
+from pathlib import Path
 import rclpy
 from rclpy.executors import SingleThreadedExecutor
 
-from ..src.za6_robot import ZA6Robot
+script_dir = Path(__file__).resolve().parent
+package_root = script_dir.parent
+if str(package_root) not in sys.path:
+    sys.path.insert(0, str(package_root))
+
+from python_api.src.za6_robot import ZA6Robot
 
 
 def main():
