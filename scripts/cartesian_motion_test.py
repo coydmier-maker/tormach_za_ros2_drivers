@@ -42,7 +42,7 @@ def main():
 
         robot.set_speed(0.025)
 
-        robot.move_to_named_pose("preparing")
+        robot.move_to_named_pose("preparing", cartesian=True)
         time.sleep(1.0)
         robot.move_to_named_pose("pickUp", cartesian=True)
         #
