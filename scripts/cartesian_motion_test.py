@@ -40,7 +40,8 @@ def main():
         
         time.sleep(2.0)
 
-        robot.set_speed(0.0025)
+        robot.set_speed(0.000025)
+        time.sleep(1)
 
         robot.move_to_named_pose("preparing", cartesian=True)
         time.sleep(1.0)
