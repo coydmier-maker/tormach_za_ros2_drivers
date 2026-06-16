@@ -44,7 +44,7 @@ def main():
         time.sleep(1.0)
 
 
-        scene_path = Path(__file__).parent / "config" / "scene.yaml"
+        scene_path = Path(__file__).parent.parent / "python_api" / "config" / "scene.yaml"
         robot.scene.load_yaml(str(scene_path))
         robot.scene.add_gripper_collider()
 
