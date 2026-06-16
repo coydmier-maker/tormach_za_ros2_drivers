@@ -12,6 +12,10 @@ from moveit_msgs.srv import ApplyPlanningScene
 
 from rclpy.callback_groups import ReentrantCallbackGroup
 
+from moveit_msgs.msg import AttachedCollisionObject
+
+from geometry_msgs.msg import Transform
+
 import yaml
 
 
