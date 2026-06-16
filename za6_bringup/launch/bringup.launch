@@ -7,6 +7,12 @@
 
   <!-- - Common args -->
   <arg
+      name="gripper"
+      default="pivot_gripper"
+      description="Gripper to attach to robot"
+      />
+
+  <arg
       name="prefix"
       default=""
       description="Prefix of joint names for multi-robot setup"
@@ -168,10 +174,13 @@
       description="Path to initial positions YAML (for fake hardware)"
       />
   <include file="$(var description_package_launch)/robot_description.launch.py">
-    <arg name="include_ros2_control" value="$(var include_ros2_control)"/>
-    <arg name="ros2_control_name" value="$(var ros2_control_name)"/>
-    <arg name="ros2_control_plugin" value="$(var ros2_control_plugin)"/>
-    <arg name="initial_positions_file" value="$(var initial_positions_file)"/>
+      <arg name="include_ros2_control" value="$(var include_ros2_control)"/>
+      <arg name="ros2_control_name" value="$(var ros2_control_name)"/>
+      <arg name="ros2_control_plugin" value="$(var ros2_control_plugin)"/>
+      <arg name="initial_positions_file" value="$(var initial_positions_file)"/>
+
+  <!-- ADD THIS LINE -->
+      <arg name="gripper" value="$(var gripper)"/>
   </include>
 
 
