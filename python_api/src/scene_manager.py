@@ -239,7 +239,7 @@ class SceneManager:
     self,
     name="gripper_collider",
     size=(0.04, 0.25, 0.17),
-    offset=(0.0, 0.0, 0.06),
+    offset=(0.0, 0.0, 0.07),
     touch_links=None,
     ):
 
