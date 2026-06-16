@@ -238,7 +238,7 @@ class SceneManager:
     def add_gripper_collider(
     self,
     name="gripper_collider",
-    size=(0.08, 0.04, 0.12),
+    size=(0.04, 0.25, 0.17),
     offset=(0.0, 0.0, 0.06),
     touch_links=None,
     ):
