@@ -215,10 +215,10 @@ class SceneManager:
         # -------------------------
         planning_scene = PlanningScene()
         planning_scene.is_diff = True
-        planning_scene.robot_state.attached_collision_objects.append(attached)
 
-        # Important: also include the object in world (MoveIt requirement)
-        planning_scene.world.collision_objects.append(collision_object)
+        # REQUIRED: set robot state explicitly
+        planning_scene.robot_state.is_diff = True
+        planning_scene.robot_state.attached_collision_objects.append(attached)
 
         request = ApplyPlanningScene.Request()
         request.scene = planning_scene
