@@ -37,7 +37,7 @@ def main():
         robot.get_logger().info("Waiting for system to stabilize...")
         time.sleep(1.0)
 
-        scene_path = Path(__file__).parent.parent / "config" / "scene.yaml"
+        scene_path = Path(__file__).parent.parent / "python_api" / "config" / "scene.yaml"
         robot.scene.load_yaml(str(scene_path))
         time.sleep(2.0)
 
