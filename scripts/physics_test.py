@@ -45,12 +45,12 @@ def main():
 
         # Ready
         robot.move_joints(
-            position=[0.044, 1.362, 0.504, 0.682, 0.048, -1.940]
+            joint_positions=[0.044, 1.362, 0.504, 0.682, 0.048, -1.940]
         )
 
         # Apprach
         robot.move_joints(
-            position=[0.0156, 1.3746, 0.482, 0.332, 0.016, -1.626],
+            joint_positions=[0.0156, 1.3746, 0.482, 0.332, 0.016, -1.626],
         )
 
         # Grip
