@@ -42,7 +42,7 @@ def main():
         robot.scene.add_gripper_collider()
         time.sleep(2.0)
 
-        robot.set_speed(0.025)
+        robot.set_speed(0.08)
 
         # -----------------------------------
         # Start movement
@@ -60,9 +60,11 @@ def main():
         robot.move_joints(
             joint_positions=[0.0156, 1.3746, 0.482, 0.332, 0.016, -1.626]
         )
+        time.sleep(1.0)
 
         # Grip
         robot.gripper.close()
+        time.sleep(1.0)
 
         # Move up
         robot.move_joints(
@@ -80,11 +82,13 @@ def main():
         )
 
         # Push off
+        robot.set_speed(0.03)
         robot.move_joints(
             joint_positions=[0.581, 1.500, 0.401, -0.070, 0.594, -1.372]
         )
 
         # Back to middle
+        robot.set_speed(0.08)
         robot.move_joints(
             joint_positions=[-0.018, 1.243, 0.480, 0.342, -0.016, -1.502]
         )
